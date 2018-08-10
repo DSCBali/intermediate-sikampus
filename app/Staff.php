@@ -4,12 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Staf extends Model
+class Staff extends Model
 {
     protected $fillable = [
       'name',
+      'username',
       'dob',
       'genre',
       'phone'
     ];
+    protected $hidden = ['password','remember_token'];
 }

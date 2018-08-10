@@ -17,8 +17,20 @@ Route::get('/', function () {
 
 Route::resource('user','UserController');
 //Route::resource('mahasiswa','MahasiswaController');
-
-
+Route::prefix('student')->group(function() {
+  Route::get('login', function(){
+    return view('student-auth.login');
+  });
+  Route::namespace('App\Http\Controllers\Student')->group(function(){
+    Route::post('login','LoginController@login')->name('student.login');
+  });
+});
+Route::prefix('staff')->group(function() {
+  Route::get('login', function(){
+    return view('staff-auth.login');
+  });
+  Route::namespace('App\Http\Controllers\Staff')->group(function(){
+    Route::post('login','LoginController@login')->name('staff.login');
+  });
+});
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Student;
 
-use App\User;
+use App\Student;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -62,9 +62,13 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
+        return Student::create([
+            'nim' => $data['nim'],
+            'name'     => $data['name'],
+            'dob'      => $data['dob'],
+            'genre'    => $data['genre'],
+            'phone'    => $data['phone'],
+            'address'    => $data['address'],
             'password' => Hash::make($data['password']),
         ]);
     }

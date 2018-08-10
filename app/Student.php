@@ -14,4 +14,5 @@ class Student extends Model
     'address',
     'genre'
   ];
+  protected $hidden = ['password','remember_token'];
 }
