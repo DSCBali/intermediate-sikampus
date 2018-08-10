@@ -16,7 +16,5 @@ Route::get('/', function () {
 });
 
 Route::resource('user','UserController');
-Route::resource('mahasiswa',function(){
-    return view('pages.college');
-});
+//Route::resource('mahasiswa','MahasiswaController');
 
