@@ -40,7 +40,7 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-        'students' => [
+        'student' => [
             'driver' => 'session',
             'provider' => 'students',
         ],
@@ -80,11 +80,11 @@ return [
 
         'students' => [
             'driver' => 'eloquent',
-            'table' => App\Student::class,
+            'model' => App\Student::class,
         ],
         'staffs' => [
             'driver' => 'eloquent',
-            'table' => App\Staff::class,
+            'model' => App\Staff::class,
         ],
     ],
 

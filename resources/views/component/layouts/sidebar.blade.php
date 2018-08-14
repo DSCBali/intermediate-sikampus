@@ -36,16 +36,31 @@
         <div class="sidebar-menu">
 
             <ul class="menu-items">
-                <li class="m-t-30 ">
-                    <a href="index.html" class="detailed">
+                <li class="m-t-30 {{ (url()->current() === route('staff.dashboard')) ? 'active':'' }} ">
+                    <a href="{{ route('staff.dashboard') }}" class="detailed">
                         <span class="title">Dashboard</span>
-                        <span class="details">Additional Text</span>
                     </a>
                     <span class="bg-success icon-thumbnail"><i class="pg-home"></i></span>
                 </li>
                 <li class="">
-                    <a href="{{route('user.index')}}"><span class="title">User</span></a>
-                    <span class="icon-thumbnail"><i class="pg-social"></i></span>
+                    <a href=""><span class="title">Students</span></a>
+                    <span class="icon-thumbnail"><i class="fa fa-users"></i></span>
+                </li>
+                <li class="">
+                    <a href="#"><span class="title">Lecturers</span></a>
+                    <span class="icon-thumbnail"><i class="fa fa-users"></i></span>
+                </li>
+                <li class="">
+                    <a href="#"><span class="title">Courses</span></a>
+                    <span class="icon-thumbnail"><i class="fa fa-book"></i></span>
+                </li>
+                <li class="">
+                    <a href="#"><span class="title">Classes</span></a>
+                    <span class="icon-thumbnail"><i class="fa fa-graduation-cap"></i></span>
+                </li>
+                <li class="">
+                    <a href="#"><span class="title">Schedules</span></a>
+                    <span class="icon-thumbnail"><i class="fa fa-calendar"></i></span>
                 </li>
                 <li>
                     <a href="javascript:;"><span class="title">Dropdown</span>

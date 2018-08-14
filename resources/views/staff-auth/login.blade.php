@@ -10,12 +10,11 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('staff.login') }}" aria-label="{{ __('Mahasiswa Login') }}">
                         @csrf
-
                         <div class="form-group row">
-                            <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('username') }}</label>
+                            <label for="username" class="col-sm-4 col-form-label text-md-right">{{ __('username') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" name="username" value="{{ old('username') }}" required autofocus>
+                                <input id="username" type="text" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" name="username" value="{{ old('username') }}" required autofocus>
 
                                 @if ($errors->has('username'))
                                     <span class="invalid-feedback" role="alert">

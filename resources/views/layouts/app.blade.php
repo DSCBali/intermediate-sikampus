@@ -53,7 +53,7 @@
                     </div>
                     <div class="dropdown pull-right d-lg-block d-none">
                         <button class="profile-dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          @if (auth()->check())
+                          @if (auth()->guard('staff')->check())
                             <span class="semi-bold">{{ auth()->user()->name }}</span>
                           @endif
                         </button>
@@ -62,7 +62,7 @@
                             <a href="#" class="dropdown-item"><i class="pg-outdent"></i> Feedback</a>
                             <a href="#" class="dropdown-item"><i class="pg-signals"></i> Help</a>
                             <a href="#" class="clearfix bg-master-lighter dropdown-item">
-                                <form class="form-inline" action="{{ route('logout') }}" method="post">
+                                <form class="form-inline" action="{{ route('staff.logout') }}" method="post">
                                   @csrf
                                   <input type="submit" name="logout" value="Logout" class="btn btn-sm btn-light pg-power btn-block">
                                 </form>
