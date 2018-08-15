@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Student;
+use App\kelas;
 
 class UserController extends Controller
 {
@@ -13,8 +15,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
-        return view('pages.user.index');
+        $student = new Student;
+        $students = $student->all();
+        return view('pages.user.index')->with('students',$students);
     }
 
     /**
@@ -24,9 +27,10 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
-        return view('pages.user.create');
-        
+        $class = kelas::get();
+        return view ('pages.user.create' , ['class'=>$class]);
+
+
     }
 
     /**

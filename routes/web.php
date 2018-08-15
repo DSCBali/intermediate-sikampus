@@ -1,5 +1,11 @@
 <?php
 
+
+use App\Course;
+use App\Lecture;
+use App\Schedule;
+use App\Student;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,7 +22,23 @@ Route::get('/', function () {
 });
 
 Route::resource('user','UserController');
-Route::resource('mahasiswa',function(){
+Route::get('mahasiswa',function(){
     return view('pages.college');
 });
 
+// INI UNTUK HALAMAN LOGIN ADMIN
+Route::get('/loginadmin' , function()
+{
+
+    return view('pages.user.admin');
+
+});
+
+Route::resource('siswa' , 'DataSiswaController');
+Route::get('/getdata/{id}/post' , 'DataSiswaController@show');
+//-----------------------------------------------------------
+
+//PROSES DATA SISWA
+
+
+//-----------------------------------------------------------

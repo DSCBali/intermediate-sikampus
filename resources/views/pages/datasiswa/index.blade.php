@@ -24,6 +24,8 @@
                                 </thead>
                                 <tbody>
                                   @foreach($students as $data)
+                                       @foreach($students as $data)
+
                                     <tr>
 
                                         <td class="v-align-middle semi-bold">

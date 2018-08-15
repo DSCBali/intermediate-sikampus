@@ -52,6 +52,15 @@
                     <span class="bg-success icon-thumbnail"><i class="pg-home"></i></span>
                 </li>
 
+                <li class="m-t-30 ">
+                    <a href="/user" class="detailed">
+                        <span class="title">Data User</span>
+
+                    </a>
+                    <span class="bg-success icon-thumbnail"><i class="pg-home"></i></span>
+                </li>
+
+
 
             </ul>
             <div class="clearfix"></div>
