@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app_admin')
 @section('content')
     <h5>Tambah User</h5>
     <div class="row">

@@ -20,26 +20,10 @@ class DataSiswaController extends Controller
    */
   public function index()
   {
+  
+      $student = new Student();
 
-      // $course = new Course;
-      // $lecture = new Lecture;
-      // $schedule = new Schedule;
-      $student = new Student;
-
-      //---------------------------
-
-
-      // $courses = $course->all();
-      // $lectures = $lecture->all();
-      // $schedules = $schedule->all();
       $students = $student->all();
-
-      //---------------------------
-
-      // return view('pages.datasiswa.index')->with('classes',$classes);
-      // return view('pages.datasiswa.index')->with('courses',$courses);
-      // return view('pages.datasiswa.index')->with('lectures',$lectures);
-      // return view('pages.datasiswa.index')->with('schedules',$schedules);
       return view('pages.datasiswa.index')->with('students',$students);
   }
 
@@ -144,8 +128,14 @@ class DataSiswaController extends Controller
    * @param  int  $id
    * @return \Illuminate\Http\Response
    */
+
   public function destroy($id)
   {
-      //
+                 $data = Student::where('id' , $id)->first();
+                 $data->delete();
+                 return redirect()->route('user')->with('alert-success','Data berhasi dihapus!');
   }
+
+
+
 }

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app_admin')
 @section('content')
     <h5>Data User</h5>
     <div id="card-advance" class="card card-default">
@@ -16,7 +16,9 @@
                                           <th style="">Date Of Birth</th>
                                           <th style="">Phone</th>
                                           <th style="">Address</th>
+
                                           <th style="">Gender</th>
+
 
 
 
@@ -41,6 +43,9 @@
                                         <td class="v-align-middle semi-bold">
                                             <p>{{$data->address}}</p>
                                         </td>
+
+
+
                                         <td class="v-align-middle semi-bold">
                                             <p>{{$data->gender}}</p>
                                         </td>

@@ -13,9 +13,11 @@ class CreateStaffs extends Migration
      */
     public function up()
     {
-        Schema::create('staffs', function (Blueprint $table) {
+        Schema::create('staff', function (Blueprint $table) {
           $table->increments('id');
+          $table->string('email' , 50);
           $table->string('name', 50);
+          $table->text('password');
           $table->date('dob');
           $table->string('gender', 12);
           $table->string('phone', 15);

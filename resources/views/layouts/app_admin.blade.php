@@ -43,25 +43,25 @@
                 <div class="">
                     <div class="brand inline   m-l-10">
                         {{-- <img src="assets/img/logo.png" alt="logo" data-src="assets/img/logo.png" data-src-retina="assets/img/logo_2x.png" width="78" height="22" alt="Iki Logo"> --}}
-                        Sistem Kampus
+                        Sistem Kampus asdasd
                     </div>
 
                     </div>
                 <div class="d-flex align-items-center">
 
+
                     <div class="pull-left p-r-10 fs-14 font-heading d-lg-block d-none">
+
                     </div>
                     <div class="dropdown pull-right d-lg-block d-none">
-                        <button class="profile-dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="semi-bold">sold</span> <span class="text-master">sold</span>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-right profile-dropdown" role="menu">
-                            <a href="#" class="dropdown-item"><i class="pg-settings_small"></i> Settings</a>
-                            <a href="#" class="dropdown-item"><i class="pg-outdent"></i> Feedback</a>
-                            <a href="#" class="dropdown-item"><i class="pg-signals"></i> Help</a>
-                            <a href="#" class="clearfix bg-master-lighter dropdown-item">
+
+                        <div>
+                            {{--<a href="#" class="dropdown-item"><i class="pg-settings_small"></i> Settings</a>--}}
+                            {{--<a href="#" class="dropdown-item"><i class="pg-outdent"></i> Feedback</a>--}}
+                            {{--<a href="#" class="dropdown-item"><i class="pg-signals"></i> Help</a>--}}
+                            <a href="/logout" class="clearfix bg-master-lighter dropdown-item">
                                 <span class="pull-left">Logout</span>
-                                <span class="pull-right"><i class="pg-power"></i></span>
+                                {{--<span class="pull-right">asdasdasd<i class="pg-power">asdasasdasdad</i></span>--}}
                             </a>
                         </div>
                     </div>

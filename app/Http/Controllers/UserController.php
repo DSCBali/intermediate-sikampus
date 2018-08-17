@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use App\Student;
 use App\kelas;
 
@@ -15,9 +16,18 @@ class UserController extends Controller
      */
     public function index()
     {
+
+      if(!Session::get('login')){
+          return redirect('/login')->with('alert','Kamu harus login dulu');
+      }
+      else{
+
         $student = new Student;
         $students = $student->all();
         return view('pages.user.index')->with('students',$students);
+
+      }
+
     }
 
     /**
@@ -29,7 +39,7 @@ class UserController extends Controller
     {
         $class = kelas::get();
         return view ('pages.user.create' , ['class'=>$class]);
-
+//        return view ('pages.user.index' , ['class'=>$class]);
 
     }
 

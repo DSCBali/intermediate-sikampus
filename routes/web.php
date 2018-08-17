@@ -21,7 +21,7 @@ Route::get('/', function () {
     return view('pages.dashboard');
 });
 
-Route::resource('user','UserController');
+
 Route::get('mahasiswa',function(){
     return view('pages.college');
 });
@@ -34,11 +34,20 @@ Route::get('/loginadmin' , function()
 
 });
 
+//-----------------------------------------------------------
+Route::resource('user','UserController');
 Route::resource('siswa' , 'DataSiswaController');
 Route::get('/getdata/{id}/post' , 'DataSiswaController@show');
+Route::post('/siswa/{id}/destroy' , 'DataSiswaController@destroy');
 //-----------------------------------------------------------
 
-//PROSES DATA SISWA
+//AUTH
 
+Route::get('/home_user', 'LoginController@index');
+Route::get('/login', 'LoginController@login');
+Route::post('/loginPost', 'LoginController@loginPost');
+Route::get('/register', 'LoginController@register');
+Route::post('/registerPost', 'LoginController@registerPost');
+Route::get('/logout', 'LoginController@logout');
 
 //-----------------------------------------------------------

@@ -1,6 +1,16 @@
-@extends('layouts.app')
+@extends('layouts.app_admin')
 @section('content')
-    <h5>Data User</h5>
+@if(\Session::has('alert'))
+    <div class="alert alert-danger">
+        <div>{{Session::get('alert')}}</div>
+    </div>
+@endif
+@if(\Session::has('alert-success'))
+    <div class="alert alert-success">
+        <div>{{Session::get('alert-success')}}</div>
+    </div>
+@endif
+    <h5>Data Siswa</h5>
     <div id="card-advance" class="card card-default">
 
             <div class="card-body">
@@ -17,6 +27,7 @@
                                           <th style="">Phone</th>
                                           <th style="">Address</th>
                                           <th style="">Gender</th>
+                                          <th style="">Pilihan</th>
 
 
 
@@ -24,7 +35,7 @@
                                 </thead>
                                 <tbody>
                                   @foreach($students as $data)
-                                       @foreach($students as $data)
+
 
                                     <tr>
 
@@ -46,10 +57,28 @@
                                         <td class="v-align-middle semi-bold">
                                             <p>{{$data->gender}}</p>
                                         </td>
+                                        <td class="v-align-middle semi-bold">
+
+                                            <form method="post" action="/siswa/{id}/destroy">
+                                                {{csrf_field()}}
+                                                {{method_field('DELETE')}}
+
+                                                <button type="submit" onclick="return confirm('Yakin Ingin Menghapus Data?')">Delete</button>
+
+
+                                            </form>
+
+                                        </td>
+
+
+
 
 
                                     </tr>
                                   @endforeach
+
+
+
 
                                 </tbody>
                             </table>

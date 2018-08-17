@@ -13,7 +13,7 @@ class CreateClasses extends Migration
      */
     public function up()
     {
-        Schema::create('classes', function (Blueprint $table) {
+        Schema::create('kelas', function (Blueprint $table) {
           $table->increments('id');
           $table->string('name', 10);
           $table->integer('max_students');
