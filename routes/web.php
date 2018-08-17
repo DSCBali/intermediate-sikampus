@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('pages.dashboard');
+    return redirect()->route('staff.login');
 });
 
 //Route::resource('mahasiswa','MahasiswaController');
@@ -28,7 +28,7 @@ Route::prefix('student')->group(function() {
 Route::prefix('staff')->group(function() {
   Route::get('login', function(){
     return view('staff-auth.login');
-  });
+  })->name('staff.login');
   Route::namespace('\Staff')->group(function(){
     Route::post('login','LoginController@login')->name('staff.login');
     Route::post('logout','LoginController@logout')->name('staff.logout');
@@ -37,6 +37,7 @@ Route::prefix('staff')->group(function() {
     Route::get('dashboard', function(){
       return view('pages.dashboard');
     })->name('staff.dashboard');
+    Route::resource('class','ClassController');
   });
 });
 Auth::routes();

@@ -142,6 +142,7 @@
     <script src="{{asset('corporate/assets/js/scripts.js')}}" type="text/javascript"></script>
 
     <script src="{{asset('corporate/assets/js/demo.js')}}" type="text/javascript"></script>
+    <script src="{{asset('js/custom.js')}}" type="text/javascript"></script>
 </body>
 
 

@@ -12,7 +12,12 @@ class Student extends Model
     'dob',
     'phone',
     'address',
-    'genre'
+    'genre',
+    'class_id'
   ];
   protected $hidden = ['password','remember_token'];
+
+  public function studentClass(){
+    return $this->belongsTo(Class::class);
+  }
 }

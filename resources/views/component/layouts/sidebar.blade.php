@@ -43,23 +43,23 @@
                     <span class="bg-success icon-thumbnail"><i class="pg-home"></i></span>
                 </li>
                 <li class="">
-                    <a href=""><span class="title">Students</span></a>
+                    <a href=""><span class="title">Mahasiswa</span></a>
                     <span class="icon-thumbnail"><i class="fa fa-users"></i></span>
                 </li>
                 <li class="">
-                    <a href="#"><span class="title">Lecturers</span></a>
+                    <a href="#"><span class="title">Dosen</span></a>
                     <span class="icon-thumbnail"><i class="fa fa-users"></i></span>
                 </li>
-                <li class="">
-                    <a href="#"><span class="title">Courses</span></a>
+                <li>
+                    <a href="#"><span class="title">Matakuliah</span></a>
                     <span class="icon-thumbnail"><i class="fa fa-book"></i></span>
                 </li>
-                <li class="">
-                    <a href="#"><span class="title">Classes</span></a>
+                <li class="{{ (url()->current() === route('class.index')) ? 'active':'' }}">
+                    <a href="{{ route('class.index') }}"><span class="title">Kelas</span></a>
                     <span class="icon-thumbnail"><i class="fa fa-graduation-cap"></i></span>
                 </li>
                 <li class="">
-                    <a href="#"><span class="title">Schedules</span></a>
+                    <a href="#"><span class="title">Jadwal</span></a>
                     <span class="icon-thumbnail"><i class="fa fa-calendar"></i></span>
                 </li>
                 <li>
