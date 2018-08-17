@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/D:/xampp/htdocs/sircampus/app/Http/Middleware/RedirectIfAuthenticated.php</file>
+            <file>file:/D:/xampp/htdocs/sircampus/app/Http/Middleware/StaffAuthenticate.php</file>
+            <file>file:/D:/xampp/htdocs/sircampus/resources/views/staff/schedule/schedule.blade.php</file>
+            <file>file:/D:/xampp/htdocs/sircampus/app/Helper/Helpers.php</file>
+            <file>file:/D:/xampp/htdocs/sircampus/database/migrations/2018_08_12_052618_create_lecturers_table.php</file>
+            <file>file:/D:/xampp/htdocs/sircampus/resources/views/staff/lecture/lecture.blade.php</file>
+            <file>file:/D:/xampp/htdocs/sircampus/resources/views/components/students/footer.blade.php</file>
+            <file>file:/D:/xampp/htdocs/sircampus/app/Http/Controllers/Staff/KlasController.php</file>
+            <file>file:/D:/xampp/htdocs/sircampus/app/Http/Kernel.php</file>
+            <file>file:/D:/xampp/htdocs/sircampus/database/migrations/2018_08_12_044319_add_status_students.php</file>
+            <file>file:/D:/xampp/htdocs/sircampus/resources/views/components/students/datas.blade.php</file>
+            <file>file:/D:/xampp/htdocs/sircampus/app/Http/Controllers/Staff/CourseController.php</file>
+            <file>file:/D:/xampp/htdocs/sircampus/app/Http/Controllers/StaffController.php</file>
+            <file>file:/D:/xampp/htdocs/sircampus/resources/views/staff/class/class.blade.php</file>
+            <file>file:/D:/xampp/htdocs/sircampus/resources/views/components/heading.blade.php</file>
+            <file>file:/D:/xampp/htdocs/sircampus/app/Http/Controllers/Auth/LoginController.php</file>
+            <file>file:/D:/xampp/htdocs/sircampus/database/migrations/2018_08_16_164239_add_fk_day_schedule.php</file>
+            <file>file:/D:/xampp/htdocs/sircampus/resources/lang/en/auth.php</file>
+            <file>file:/D:/xampp/htdocs/sircampus/resources/views/staff/student.blade.php</file>
+            <file>file:/D:/xampp/htdocs/sircampus/resources/views/welcome.blade.php</file>
+            <file>file:/D:/xampp/htdocs/sircampus/app/Http/Requests/Staff/Schedule/StoreRequest.php</file>
+            <file>file:/D:/xampp/htdocs/sircampus/app/Providers/AppServiceProvider.php</file>
+            <file>file:/D:/xampp/htdocs/sircampus/app/Http/Controllers/HomeController.php</file>
+            <file>file:/D:/xampp/htdocs/sircampus/app/Http/Controllers/Staff/LectureController.php</file>
+            <file>file:/D:/xampp/htdocs/sircampus/resources/views/home.blade.php</file>
+            <file>file:/D:/xampp/htdocs/sircampus/resources/views/components/students/sidebar.blade.php</file>
+            <file>file:/D:/xampp/htdocs/sircampus/database/migrations/2018_08_07_123536_create_staffs_table.php</file>
+            <file>file:/D:/xampp/htdocs/sircampus/resources/views/components/datas.blade.php</file>
+            <file>file:/D:/xampp/htdocs/sircampus/resources/views/staff/schedule/form.blade.php</file>
+        </group>
+    </open-files>
+</project-private>
