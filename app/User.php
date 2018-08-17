@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'nim', 'name', 'password','gender','dob','phone','address','class_id'
     ];
 
     /**
@@ -26,4 +26,26 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    public function getgenderFakeAttribute()
+    {
+        if($this->gender == 1)
+            $gender = 'Male';
+        else
+            $gender ="Female";
+                
+        return $gender;
+    }
+    public function getfakeStatusAttribute(){
+        if($this->status == 1)
+                $status = 'Active';
+        else
+            $status = 'Deactive';
+        
+        return $status;
+    }
+    
+    public function Klas(){
+         return $this->belongsTo('App\Klas','class_id')->withDefault();;
+    }
+    
 }
