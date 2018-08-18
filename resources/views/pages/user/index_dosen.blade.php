@@ -17,6 +17,7 @@
                                           <th style="">Date Of Birth</th>
                                           <th style="">Phone</th>
                                           <th style="">Address</th>
+                                          <th style="">Course id</th>
                                           <th style="">Pilihan</th>
                                     </tr>
                                 </thead>
@@ -28,7 +29,7 @@
                                             <p>{{$no++}}</p>
                                         </td>
                                         <td class="v-align-middle semi-bold">
-                                            <p>{{$data->gender}}</p>
+                                            <p>{{$data->name}}</p>
                                         </td>
                                         <td class="v-align-middle semi-bold">
                                             <p>{{$data->dob}}</p>
@@ -39,8 +40,12 @@
                                         <td class="v-align-middle semi-bold">
                                             <p>{{$data->address}}</p>
                                         </td>
+
                                         <td class="v-align-middle semi-bold">
                                             <p>{{$data->gender}}</p>
+                                        </td>
+                                        <td class="v-align-middle semi-bold">
+                                            <p>{{$data->course_id}}</p>
                                         </td>
                                         <td class="v-align-middle semi-bold">
 

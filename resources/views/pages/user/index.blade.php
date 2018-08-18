@@ -20,6 +20,7 @@
                                           <th style="">Address</th>
 
                                           <th style="">Gender</th>
+                                          <th style="">Class Id</th>
                                           {{--<th style="">Pilihan</th>--}}
 
 
@@ -50,11 +51,11 @@
                                         <td class="v-align-middle semi-bold">
                                             <p>{{$data->address}}</p>
                                         </td>
-
-
-
                                         <td class="v-align-middle semi-bold">
                                             <p>{{$data->gender}}</p>
+                                        </td>
+                                        <td class="v-align-middle semi-bold">
+                                            <p>{{$data->class_id}}</p>
                                         </td>
                                         {{--<td class="v-align-middle semi-bold">--}}
 
