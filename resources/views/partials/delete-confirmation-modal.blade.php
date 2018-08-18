@@ -11,7 +11,7 @@
         <p>Yakin ingin menghapus data ini?</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
         <form id="deleteForm" class="form-inline" action="#" method="post">
           @csrf
           @method('delete')

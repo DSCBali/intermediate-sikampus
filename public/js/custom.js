@@ -8,4 +8,12 @@
       $('#deleteForm').attr('action',$(this).attr('data-url'));
     });
   }
+  setDatepicker();
+  function setDatepicker(){
+    $('.datepicker').datepicker({
+      format: 'yyyy-mm-dd',
+      startView: 2,
+      autoclose: true,
+    });
+  }
 })(jQuery)

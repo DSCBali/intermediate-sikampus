@@ -15,12 +15,15 @@ Route::get('/', function () {
     return redirect()->route('staff.login');
 });
 
-//Route::resource('mahasiswa','MahasiswaController');
+Route::resource('mahasiswa','MahasiswaController');
 
 Route::prefix('student')->group(function() {
   Route::get('login', function(){
     return view('student-auth.login');
   });
+  Route::get('dashboard', function(){
+    return view('pages.dashboard');
+  })->name('student.dashboard');
   Route::namespace('\Student')->group(function(){
     Route::post('login','LoginController@login')->name('student.login');
   });
@@ -38,6 +41,7 @@ Route::prefix('staff')->group(function() {
       return view('pages.dashboard');
     })->name('staff.dashboard');
     Route::resource('class','ClassController');
+    Route::resource('student','StudentController');
   });
 });
 Auth::routes();

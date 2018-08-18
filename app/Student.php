@@ -13,11 +13,24 @@ class Student extends Model
     'phone',
     'address',
     'genre',
+    'class_id',
+    'password',
     'class_id'
   ];
   protected $hidden = ['password','remember_token'];
 
+  public function getGenreAttribute($val){
+    if($val == 1)
+      return 'Laki - laki';
+    else
+      return 'Perempuan';
+  }
+
   public function studentClass(){
-    return $this->belongsTo(Class::class);
+    return $this->belongsTo(Kelas::class);
+  }
+
+  public function plainGenre(){
+    return $this->attributes['genre'];
   }
 }

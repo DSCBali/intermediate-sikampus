@@ -42,8 +42,8 @@
                     </a>
                     <span class="bg-success icon-thumbnail"><i class="pg-home"></i></span>
                 </li>
-                <li class="">
-                    <a href=""><span class="title">Mahasiswa</span></a>
+                <li class="{{ (url()->current() === route('student.index')) ? 'active':'' }}">
+                    <a href="{{ route('student.index') }}"><span class="title">Mahasiswa</span></a>
                     <span class="icon-thumbnail"><i class="fa fa-users"></i></span>
                 </li>
                 <li class="">

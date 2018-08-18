@@ -21,6 +21,8 @@ class CreateStudentsTable extends Migration
             $table->string('phone', 15);
             $table->text('address');
             $table->boolean('genre');
+            $table->integer('class_id')->unsigned();
+            $table->foreign('class_id')->references('id')->on('classes');
             $table->timestamps();
         });
     }
