@@ -19,6 +19,7 @@ class CreateSchedules extends Migration
           $table->time('time');
           $table->integer('course_id');
           $table->integer('class_id');
+          $table->timestamps();
         });
     }
 
