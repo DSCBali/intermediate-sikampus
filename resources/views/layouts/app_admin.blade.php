@@ -32,7 +32,7 @@
 
 <body class="fixed-header dashboard menu-pin menu-behind">
 
-    @include('component.layouts.sidebar')
+    @include('component.layouts_admin.sidebar')
     <div class="page-container ">
 
             <div class="header ">

@@ -6,13 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Lecture extends Model
 {
-  protected $fillable = [
-    'name',
-    'gender',
-    'dob',
-    'phone',
-    'address'
-  ];
+  protected $table = 'lectures';
 
    public function get_course()
    {

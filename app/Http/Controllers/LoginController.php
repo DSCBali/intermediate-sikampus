@@ -50,12 +50,14 @@ class LoginController extends Controller
      return view('pages.user.adminregrister');
  }
  public function registerPost(Request $request){
+
      $this->validate($request, [
          'name' => 'required|min:4',
          'email' => 'required|min:4|email|unique:users',
          'password' => 'required',
          'confirmation' => 'required|same:password',
      ]);
+
      $data =  new Staff();
      $data->name = $request->name;
      $data->email = $request->email;

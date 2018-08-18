@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SendRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 use App\kelas;
 use App\Course;
 use App\Lecture;
 use App\Schedule;
 use App\Student;
+use Validator;
 
 
 class DataSiswaController extends Controller
@@ -24,7 +28,7 @@ class DataSiswaController extends Controller
       $student = new Student();
 
       $students = $student->all();
-      return view('pages.datasiswa.index')->with('students',$students);
+      return view('pages.user.index')->with('students',$students);
   }
 
   /**
@@ -54,20 +58,18 @@ class DataSiswaController extends Controller
 
 
 
-  public function store(Request $request)
+  public function store($request)
   {
 
 
+              Validator::make(request()->all(), [
 
+                  'nim' => 'required|min:9|unique:students' ,
+                  'name' => 'required|max:20|unique:students' ,
 
-
-
+              ]);
 
               $students = new Student();
-
-
-
-
               $students->nim = $request->input('nim');
               $students->name = $request->input('nama');
               $students->dob = $request->input('dob');
@@ -75,9 +77,6 @@ class DataSiswaController extends Controller
               $students->address = $request->input('alamat');
               $students->gender = $request->input('gender');
               $students->class_id = $request->input('kelas');
-
-
-
 
               $students->save();
 
@@ -119,7 +118,15 @@ class DataSiswaController extends Controller
    */
   public function update(Request $request, $id)
   {
-      //
+      $students = ModelKontak::where('id',$id)->first();
+      $students->nim = $request->nim;
+      $students->name = $request->name;
+      $students->dob = $request->dob;
+      $students->address = $request->address;
+      $students->gender = $request->input('gender');
+      $students->class_id = $request->input('kelas');
+      $students->save();
+      return redirect()->route('kontak.index')->with('alert-success','Data berhasil diubah!');
   }
 
   /**
@@ -131,9 +138,10 @@ class DataSiswaController extends Controller
 
   public function destroy($id)
   {
+
                  $data = Student::where('id' , $id)->first();
                  $data->delete();
-                 return redirect()->route('user')->with('alert-success','Data berhasi dihapus!');
+                 return redirect('user')->with('alert-success','Data berhasi dihapus!');
   }
 
 

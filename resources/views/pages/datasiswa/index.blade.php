@@ -27,7 +27,7 @@
                         <th style="">Phone</th>
                         <th style="">Address</th>
                         <th style="">Gender</th>
-                        <th style="">Pilihan</th>
+
 
 
 
@@ -57,18 +57,7 @@
                             <td class="v-align-middle semi-bold">
                                 <p>{{$data->gender}}</p>
                             </td>
-                            <td class="v-align-middle semi-bold">
 
-                                <form method="post" action="/siswa/{id}/destroy">
-                                    {{csrf_field()}}
-                                    {{method_field('DELETE')}}
-
-                                    <button type="submit" onclick="return confirm('Yakin Ingin Menghapus Data?')">Delete</button>
-
-
-                                </form>
-
-                            </td>
 
 
 

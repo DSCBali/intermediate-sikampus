@@ -16,38 +16,34 @@ use App\Student;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('pages.dashboard');
-});
-
-
-Route::get('mahasiswa',function(){
-    return view('pages.college');
-});
-
+// PAGE ROUTE
+Route::get('/',function(){return view('pages.dashboard');});
+Route::get('mahasiswa',function(){return view('pages.college');});
 // INI UNTUK HALAMAN LOGIN ADMIN
-Route::get('/loginadmin' , function()
-{
+Route::get('/loginadmin',function(){return view('pages.user.admin');});
 
-    return view('pages.user.admin');
-
-});
-
-//-----------------------------------------------------------
-Route::resource('user','UserController');
-Route::resource('siswa' , 'DataSiswaController');
-Route::get('/getdata/{id}/post' , 'DataSiswaController@show');
-Route::post('/siswa/{id}/destroy' , 'DataSiswaController@destroy');
-//-----------------------------------------------------------
-
-//AUTH
-
+//AUTH LOGIN ADMIN
 Route::get('/home_user', 'LoginController@index');
 Route::get('/login', 'LoginController@login');
 Route::post('/loginPost', 'LoginController@loginPost');
-Route::get('/register', 'LoginController@register');
-Route::post('/registerPost', 'LoginController@registerPost');
+// Route::get('/register', 'LoginController@register');
+// Route::post('/registerPost', 'LoginController@registerPost');
 Route::get('/logout', 'LoginController@logout');
+//-----------------------------------------------------------
 
+//UNTUK DATA SISWA PAGE
+Route::resource('user','UserController');
+Route::resource('siswa' , 'DataSiswaController');
+// Route::get('/getdata/{id}/post' , 'DataSiswaController@show');
+Route::get('/siswa/{id}/destroy' , 'DataSiswaController@destroy');
+Route::get('/siswa/{id}/edit' , 'UserController@edit');
+//-----------------------------------------------------------
+
+
+
+//PAGE DOSEN
+Route::resource('user2' , 'DosenController');
+Route::resource('dosen' , 'DataDosenController');
+Route::get('/dosen/{id}/destroy' , 'DataDosenController@destroy');
+Route::get('/dosen/{id}/edit' , 'DosenController@edit');
 //-----------------------------------------------------------

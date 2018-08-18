@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Lecture;
+use App\Course;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
-use App\Student;
-use App\kelas;
 
-class UserController extends Controller
+class DosenController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,16 +17,16 @@ class UserController extends Controller
     public function index()
     {
 
-      if(!Session::get('login')){
-          return redirect('/login')->with('alert','Kamu harus login dulu');
-      }
-      else{
+        if(!Session::get('login')){
+            return redirect('/login')->with('alert','Kamu harus login dulu');
+        }
+        else{
 
-        $student = new Student;
-        $students = $student->all();
-        return view('pages.user.index')->with('students',$students);
+            $dosen = new Lecture;
+            $dosens = $dosen->all();
+            return view('pages.user.index_dosen')->with('dosens',$dosens);
 
-      }
+        }
 
     }
 
@@ -42,8 +42,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        $class = kelas::get();
-        return view ('pages.user.create' , ['class'=>$class]);
+        $course = Course::get();
+        return view ('pages.user.create_dosen' , ['course'=>$course]);
 //        return view ('pages.user.index' , ['class'=>$class]);
 
     }
@@ -90,15 +90,15 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-//        $students = Student::where('id',$id)->first();
-//        $students->nim = $request->nim;
-//        $students->name = $request->name;
-//        $students->dob = $request->dob;
-//        $students->address = $request->address;
-//        $students->gender = $request->input('gender');
-//        $students->class_id = $request->input('kelas');
-//        $students->save();
-//        return redirect('/user')->with('alert-success','Data berhasil diubah!');
+        $dosens = Lecture::where('id',$id)->first();
+        $dosens->nim = $request->nim;
+        $dosens->name = $request->name;
+        $dosens->dob = $request->dob;
+        $dosens->address = $request->address;
+        $dosens->gender = $request->input('gender');
+        $dosens->class_id = $request->input('kelas');
+        $dosens->save();
+        return redirect('/user2')->with('alert-success','Data berhasil diubah!');
     }
 
     /**
@@ -106,9 +106,9 @@ class UserController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+//     */
+//    public function destroy($id)
+//    {
+//
+//    }
 }
