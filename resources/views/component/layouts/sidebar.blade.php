@@ -46,7 +46,7 @@
 
                 <li class="m-t-30 ">
                     <a href="/loginadmin" class="detailed">
-                        <span class="title">Login Admin</span>
+                        <span class="title">Login Staff</span>
 
                     </a>
                     <span class="bg-success icon-thumbnail"><i class="pg-home"></i></span>

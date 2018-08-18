@@ -6,11 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class kelas extends Model
 {
-    protected $fillable = [
-        'name',
-        'max_students'
-    ];
-
+    protected $table = 'kelas';
 
     public function get_student()
     {

@@ -11,6 +11,7 @@
 
                                 <thead>
                                     <tr>
+                                        <th style="">No</th>
                                         <th style="">Nama</th>
                                         <th style="">Gender</th>
                                           <th style="">Date Of Birth</th>
@@ -20,10 +21,11 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                  @php $no = 1; @endphp
                                   @foreach($dosens as $data)
                                     <tr>
                                         <td class="v-align-middle semi-bold">
-                                            <p>{{$data->name}}</p>
+                                            <p>{{$no++}}</p>
                                         </td>
                                         <td class="v-align-middle semi-bold">
                                             <p>{{$data->gender}}</p>

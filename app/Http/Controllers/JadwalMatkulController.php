@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 
+use App\Schedule;
 use App\Course;
+use App\kelas;
+use App\Lecture;
+
 use Validator;
 
 class JadwalMatkulController extends Controller
@@ -17,9 +22,11 @@ class JadwalMatkulController extends Controller
         }
         else{
 
-            $dosen = new Lecture;
-            $dosens = $dosen->all();
-            return view('pages.user.index_dosen')->with('dosens',$dosens);
+            $jadwal = new Course;
+
+            $jadwals = $jadwal->all();
+
+            return view('pages.user.index_jadwal', ['jadwals',$jadwals]);
 
         }
 
@@ -30,8 +37,9 @@ class JadwalMatkulController extends Controller
     }
     public function create()
     {
-        $course = Course::get();
-        return view('pages.user.create_dosen' , ['course'=>$course]);
+        $dosen = Lecture::get();
+        $kelas = kelas::get();
+        return view('pages.user.create_jadwal' , ['dosen'=>$dosen] , ['kelas'=>$kelas]);
     }
     public function store(Request $request)
     {
@@ -47,14 +55,14 @@ class JadwalMatkulController extends Controller
     }
     public function update(Request $request, $id)
     {
-        $dosens = Lecture::where('id',$id)->first();
-        $dosens->nim = $request->nim;
-        $dosens->name = $request->name;
-        $dosens->dob = $request->dob;
-        $dosens->address = $request->address;
-        $dosens->gender = $request->input('gender');
-        $dosens->class_id = $request->input('kelas');
-        $dosens->save();
+        $jadwal = Schedule::where('id',$id)->first();
+        $jadwal->nim = $request->nim;
+        $jadwal->name = $request->name;
+        $jadwal->dob = $request->dob;
+        $jadwal->address = $request->address;
+        $jadwal->gender = $request->input('gender');
+        $jadwal->class_id = $request->input('kelas');
+        $jadwal->save();
         return redirect('/user2')->with('alert-success','Data berhasil diubah!');
     }
     public function destroy($id)

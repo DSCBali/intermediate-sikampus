@@ -12,7 +12,7 @@
                                 <thead>
                                     <tr>
 
-
+                                        <th style="">No</th>
                                         <th style="">Nim</th>
                                         <th style="">Nama</th>
                                           <th style="">Date Of Birth</th>
@@ -28,10 +28,13 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @php $no = 1; @endphp
                                   @foreach($students as $data)
 
                                     <tr>
-
+                                      <td class="v-align-middle semi-bold">
+                                          <p>{{$no++}}</p>
+                                      </td>
                                         <td class="v-align-middle semi-bold">
                                             <p>{{$data->nim}}</p>
                                         </td>

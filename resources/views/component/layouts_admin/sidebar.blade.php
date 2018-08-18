@@ -36,28 +36,35 @@
         <div class="sidebar-menu">
 
             <ul class="menu-items">
-                <li class="m-t-30 ">
-                    <a href="/" class="detailed">
-                        <span class="title">Dashboard</span>
+                {{--<li class="m-t-30">--}}
+                    {{--<a href="/" class="detailed">--}}
+                        {{--<span class="title">Dashboard</span>--}}
 
-                    </a>
-                    <span class="bg-success icon-thumbnail"><i class="pg-home"></i></span>
-                </li>
+                    {{--</a>--}}
+                    {{--<span class="bg-success icon-thumbnail"><i class="pg-arrow_right"></i></span>--}}
+                {{--</li>--}}
 
 
                 <li class="m-t-30 ">
                     <a href="/user" class="detailed">
-                        <span class="title">Data User</span>
+                        <span class="title">Data Mahasiswa</span>
 
                     </a>
-                    <span class="bg-success icon-thumbnail"><i class="pg-home"></i></span>
+                    <span class="bg-success icon-thumbnail"><i class="pg-arrow_right"></i></span>
                 </li>
                 <li class="m-t-30 ">
                     <a href="/user2" class="detailed">
                         <span class="title">Data Dosen</span>
 
                     </a>
-                    <span class="bg-success icon-thumbnail"><i class="pg-home"></i></span>
+                    <span class="bg-success icon-thumbnail"><i class="pg-arrow_right"></i></span>
+                </li>
+                <li class="m-t-30 ">
+                    <a href="/matkul" class="detailed">
+                        <span class="title">Jadwal</span>
+
+                    </a>
+                    <span class="bg-success icon-thumbnail"><i class="pg-arrow_right"></i></span>
                 </li>
 
 
