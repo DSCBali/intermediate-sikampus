@@ -5,7 +5,7 @@
     <div id="card-advance" class="card card-default">
 
             <div class="card-body">
-                <a href="{{route('user.create')}}" class="text-right pull-right btn btn-complete btn-cons">Tambah Baru</a>
+                {{--<a href="{{route('user.create')}}" class="text-right pull-right btn btn-complete btn-cons">Tambah Baru</a>--}}
                     <div class="table-responsive">
                             <table class="table table-striped" id="stripedTable">
 
@@ -20,7 +20,7 @@
                                           <th style="">Address</th>
 
                                           <th style="">Gender</th>
-                                          <th style="">Pilihan</th>
+                                          {{--<th style="">Pilihan</th>--}}
 
 
 
@@ -53,21 +53,21 @@
                                         <td class="v-align-middle semi-bold">
                                             <p>{{$data->gender}}</p>
                                         </td>
-                                        <td class="v-align-middle semi-bold">
+                                        {{--<td class="v-align-middle semi-bold">--}}
 
-                                            <form method="post" action="{{ route('siswa.destroy' , $data -> id ) }}">
+                                            {{--<form method="post" action="{{ route('siswa.destroy' , $data -> id ) }}">--}}
 
-                                                {{csrf_field()}}
-                                                {{method_field('DELETE')}}
+                                                {{--{{csrf_field()}}--}}
+                                                {{--{{method_field('DELETE')}}--}}
 
-                                                <p class="v-align-middle semi-bold"><a href="{{ route('siswa.edit' , $data->id) }}" class=" btn btn-sm btn-primary">Edit</a></p>
+                                                {{--<p class="v-align-middle semi-bold"><a href="{{ route('siswa.edit' , $data->id) }}" class=" btn btn-sm btn-primary">Edit</a></p>--}}
 
-                                                <button type="submit" onclick="return confirm('Yakin Ingin Menghapus Data?')">Delete</button>
+                                                {{--<button type="submit" onclick="return confirm('Yakin Ingin Menghapus Data?')">Delete</button>--}}
 
 
-                                            </form>
+                                            {{--</form>--}}
 
-                                        </td>
+                                        {{--</td>--}}
 
 
                                     </tr>

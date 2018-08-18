@@ -29,7 +29,7 @@
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-md btn-primary">Login</button>
-                    <a href="{{url('register')}}" class="btn btn-md btn-warning">Register</a>
+                    {{--<a href="{{url('register')}}" class="btn btn-md btn-warning">Register</a>--}}
                 </div>
             </form>
         </div>

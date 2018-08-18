@@ -31,12 +31,12 @@ Route::post('/loginPost', 'LoginController@loginPost');
 Route::get('/logout', 'LoginController@logout');
 //-----------------------------------------------------------
 
-//UNTUK DATA SISWA PAGE
+//UNTUK DATA SISWA PAGEstatus
 Route::resource('user','UserController');
 Route::resource('siswa' , 'DataSiswaController');
 // Route::get('/getdata/{id}/post' , 'DataSiswaController@show');
-Route::get('/siswa/{id}/destroy' , 'DataSiswaController@destroy');
-Route::get('/siswa/{id}/edit' , 'UserController@edit');
+//Route::get('/siswa/{id}/destroy' , 'DataSiswaController@destroy');
+//Route::get('/siswa/{id}/edit' , 'UserController@edit');
 //-----------------------------------------------------------
 
 
@@ -46,4 +46,11 @@ Route::resource('user2' , 'DosenController');
 Route::resource('dosen' , 'DataDosenController');
 Route::get('/dosen/{id}/destroy' , 'DataDosenController@destroy');
 Route::get('/dosen/{id}/edit' , 'DosenController@edit');
+//-----------------------------------------------------------
+
+//PAGE Mata Kuliah
+Route::resource('matkul' , 'MatkulController');
+Route::resource('JadwalMatkul' , 'JadwalMatkulController');
+Route::get('/jadwal/{id}/destroy' , 'JadwalMatkulController@destroy');
+Route::get('/jadwal/{id}/edit' , 'MatkulController@edit');
 //-----------------------------------------------------------

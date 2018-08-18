@@ -58,7 +58,7 @@ class DataSiswaController extends Controller
 
 
 
-  public function store($request)
+  public function store(Request $request)
   {
 
 
