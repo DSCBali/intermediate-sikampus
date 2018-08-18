@@ -31,7 +31,7 @@ Route::post('/loginPost', 'LoginController@loginPost');
 Route::get('/logout', 'LoginController@logout');
 //-----------------------------------------------------------
 
-//UNTUK DATA SISWA PAGEstatus
+//UNTUK DATA SISWA PAGE status
 Route::resource('user','UserController');
 Route::resource('siswa' , 'DataSiswaController');
 // Route::get('/getdata/{id}/post' , 'DataSiswaController@show');
@@ -48,9 +48,23 @@ Route::get('/dosen/{id}/destroy' , 'DataDosenController@destroy');
 Route::get('/dosen/{id}/edit' , 'DosenController@edit');
 //-----------------------------------------------------------
 
-//PAGE Mata Kuliah
+//PAGE jadwal
 Route::resource('matkul' , 'MatkulController');
 Route::resource('JadwalMatkul' , 'JadwalMatkulController');
 Route::get('/jadwal/{id}/destroy' , 'JadwalMatkulController@destroy');
+Route::get('/jadwal/{id}/edit' , 'MatkulController@edit');
+//-----------------------------------------------------------
+
+//Page Kelas
+Route::resource('kelas' , 'KelasController');
+Route::resource('datakelas' , 'DataKelasController');
+Route::get('/data/{id}/destroy' , 'DataKelasController@destroy');
+Route::get('/data/{id}/edit' , 'MatkulController@edit');
+//-----------------------------------------------------------
+
+
+//Page Mata Kuliah
+Route::resource('matkul2' , 'DataMatkulController');
+Route::get('/matkul/{id}/destroy' , 'DataMatkulController@destroy');
 Route::get('/jadwal/{id}/edit' , 'MatkulController@edit');
 //-----------------------------------------------------------

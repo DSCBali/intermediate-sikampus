@@ -66,6 +66,21 @@
                     </a>
                     <span class="bg-success icon-thumbnail"><i class="pg-arrow_right"></i></span>
                 </li>
+                <li class="m-t-30 ">
+                    <a href="/kelas" class="detailed">
+                        <span class="title">Kelas</span>
+
+                    </a>
+                    <span class="bg-success icon-thumbnail"><i class="pg-arrow_right"></i></span>
+                </li>
+                <li class="m-t-30 ">
+                    <a href="/matkul2" class="detailed">
+                        <span class="title">Mata Kuliah</span>
+
+                    </a>
+                    <span class="bg-success icon-thumbnail"><i class="pg-arrow_right"></i></span>
+                </li>
+
 
 
 

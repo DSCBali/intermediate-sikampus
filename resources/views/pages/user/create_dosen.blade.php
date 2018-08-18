@@ -1,6 +1,6 @@
 @extends('layouts.app_admin')
 @section('content')
-    <h5>Tambah User</h5>
+    <h5>Tambah Dosen</h5>
     <div class="row">
         <div class="col-md-6">
 
