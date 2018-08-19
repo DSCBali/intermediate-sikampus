@@ -15,7 +15,7 @@
                             <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('NIM') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('nim') ? ' is-invalid' : '' }}" name="nim" value="{{ old('nim') }}" required autofocus>
+                                <input id="nim" type="text" class="form-control{{ $errors->has('nim') ? ' is-invalid' : '' }}" name="nim" value="{{ old('nim') }}" required autofocus>
 
                                 @if ($errors->has('nim'))
                                     <span class="invalid-feedback" role="alert">

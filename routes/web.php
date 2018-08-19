@@ -20,18 +20,17 @@ Route::resource('mahasiswa','MahasiswaController');
 Route::prefix('student')->group(function() {
   Route::get('login', function(){
     return view('student-auth.login');
-  });
-  Route::get('dashboard', function(){
-    return view('pages.dashboard');
-  })->name('student.dashboard');
+  })->middleware('guest:student');
+  Route::get('dashboard','StudentDashboardController@dashboard')->name('student.dashboard');
   Route::namespace('\Student')->group(function(){
     Route::post('login','LoginController@login')->name('student.login');
+    Route::post('logout','LoginController@logout')->name('student.logout');
   });
 });
 Route::prefix('staff')->group(function() {
   Route::get('login', function(){
     return view('staff-auth.login');
-  })->name('staff.login');
+  })->name('staff.login')->middleware('guest:staff');
   Route::namespace('\Staff')->group(function(){
     Route::post('login','LoginController@login')->name('staff.login');
     Route::post('logout','LoginController@logout')->name('staff.logout');
@@ -45,6 +44,7 @@ Route::prefix('staff')->group(function() {
     Route::resource('lecturer','LecturerController');
     Route::resource('course','CourseController');
     Route::resource('schedule','ScheduleController');
+    Route::resource('staff','StaffController');
   });
 });
 Auth::routes();

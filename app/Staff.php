@@ -14,12 +14,28 @@ class Staff extends Authenticatable
       'username',
       'dob',
       'genre',
-      'phone'
+      'phone',
+      'password'
     ];
     protected $hidden = ['password','remember_token'];
 
     public function setPasswordAttribute($val){
       return $this->attributes['password'] = Hash::make($val);
+    }
+
+    public function getGenreAttribute($val){
+      if($val == 1)
+        return 'Laki - laki';
+      else
+        return 'Perempuan';
+    }
+
+    public function studentClass(){
+      return $this->belongsTo(Kelas::class);
+    }
+
+    public function plainGenre(){
+      return $this->attributes['genre'];
     }
 
     public function getNameAttribute($val){

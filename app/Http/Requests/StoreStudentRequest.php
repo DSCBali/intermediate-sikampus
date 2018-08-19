@@ -22,7 +22,7 @@ class StoreStudentRequest extends FormRequest
         $data = parent::all();
         $year = now()->year;
         $nim = substr($year, 2, strlen($year));
-        $data['nim'] = $nim.'00'.Student::count()+1;
+        $data['nim'] = $nim.'00'.rand(100,999).'00'.Student::count()+1;
         $data['password'] = 'alwaysthefirst';
         return $data;
     }

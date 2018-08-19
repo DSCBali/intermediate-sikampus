@@ -24,6 +24,10 @@ class Kelas extends Model
     }
 
     public function courses(){
-      $this->belongsTo(Course::class, 'schedules');
+      return $this->belongsToMany(Course::class, 'schedules', 'class_id', 'course_id')->withPivot('day','time');
+    }
+
+    public function currentCourses(){
+      return $this->courses()->wherePivot('day',now()->format('Y-m-d'));
     }
 }

@@ -18,7 +18,7 @@ class Schedule extends Model
     }
 
     public function getDayAttribute($val){
-      $date = Carbon::createFromFormat('Y-m-d', $val)->format('l');
+      $date = Carbon::createFromFormat('Y-m-d', $val)->format('l, d m Y');
       return $date;
     }
 

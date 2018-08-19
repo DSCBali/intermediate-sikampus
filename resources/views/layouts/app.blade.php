@@ -54,7 +54,7 @@
                     </div>
                     <div class="dropdown pull-right d-lg-block d-none">
                         <button class="profile-dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          @if (auth()->guard('staff')->check())
+                          @if (auth()->check())
                             <span class="semi-bold">{{ auth()->user()->name }}</span>
                           @endif
                         </button>

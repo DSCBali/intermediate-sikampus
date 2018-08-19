@@ -3,8 +3,10 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Hash;
 
-class Student extends Model
+class Student extends Authenticatable
 {
   protected $fillable = [
     'nim',
@@ -27,14 +29,14 @@ class Student extends Model
   }
 
   public function studentClass(){
-    return $this->belongsTo(Kelas::class);
+    return $this->belongsTo('App\Kelas', 'class_id');
   }
 
   public function plainGenre(){
     return $this->attributes['genre'];
   }
 
-  public function schedules(){
-    $this->studentClass->courses;
+  public function setPasswordAttribute($val){
+    return $this->attributes['password'] = Hash::make($val);
   }
 }
