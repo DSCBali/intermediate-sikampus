@@ -1,21 +1,5 @@
 <?php
 
-
-use App\Course;
-use App\Lecture;
-use App\Schedule;
-use App\Student;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 // PAGE ROUTE
 Route::get('/',function(){return view('pages.dashboard');});
 Route::get('mahasiswa',function(){return view('pages.college');});
@@ -31,9 +15,9 @@ Route::post('/loginPost', 'LoginController@loginPost');
 Route::get('/logout', 'LoginController@logout');
 //-----------------------------------------------------------
 
-//UNTUK DATA SISWA PAGE status
+//UNTUK DATA SISWA PAGE
 Route::resource('user','UserController');
-Route::resource('siswa' , 'DataSiswaController');
+//Route::resource('siswa' , 'DataSiswaController');
 // Route::get('/getdata/{id}/post' , 'DataSiswaController@show');
 //Route::get('/siswa/{id}/destroy' , 'DataSiswaController@destroy');
 //Route::get('/siswa/{id}/edit' , 'UserController@edit');
@@ -43,21 +27,18 @@ Route::resource('siswa' , 'DataSiswaController');
 
 //PAGE DOSEN
 Route::resource('user2' , 'DosenController');
-Route::resource('dosen' , 'DataDosenController');
 Route::get('/dosen/{id}/destroy' , 'DataDosenController@destroy');
 Route::get('/dosen/{id}/edit' , 'DosenController@edit');
 //-----------------------------------------------------------
 
 //PAGE jadwal
-Route::resource('matkul' , 'MatkulController');
-Route::resource('JadwalMatkul' , 'JadwalMatkulController');
+Route::resource('jadwalmatkul' , 'JadwalMatkulController');
 Route::get('/jadwal/{id}/destroy' , 'JadwalMatkulController@destroy');
 Route::get('/jadwal/{id}/edit' , 'MatkulController@edit');
 //-----------------------------------------------------------
 
 //Page Kelas
 Route::resource('kelas' , 'KelasController');
-Route::resource('datakelas' , 'DataKelasController');
 Route::get('/data/{id}/destroy' , 'DataKelasController@destroy');
 Route::get('/data/{id}/edit' , 'MatkulController@edit');
 //-----------------------------------------------------------

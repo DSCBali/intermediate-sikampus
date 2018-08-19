@@ -10,7 +10,7 @@ class Lecture extends Model
 
    public function get_course()
    {
-       $this->belongsTo('App\Course' , 'course_id');
+       return $this->belongsTo('App\Course' , 'course_id');
    }
 
 }

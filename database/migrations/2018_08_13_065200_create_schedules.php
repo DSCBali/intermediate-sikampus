@@ -30,8 +30,6 @@ class CreateSchedules extends Migration
      */
     public function down()
     {
-        Schema::table('schedules', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('schedules');
     }
 }

@@ -17,7 +17,7 @@
                                           <th style="">Date Of Birth</th>
                                           <th style="">Phone</th>
                                           <th style="">Address</th>
-                                          <th style="">Course id</th>
+                                          <th style="">Mengajar</th>
                                           <th style="">Pilihan</th>
                                     </tr>
                                 </thead>
@@ -45,16 +45,16 @@
                                             <p>{{$data->gender}}</p>
                                         </td>
                                         <td class="v-align-middle semi-bold">
-                                            <p>{{$data->course_id}}</p>
+                                            <p>{{$data->get_course->name}}</p>
                                         </td>
                                         <td class="v-align-middle semi-bold">
 
-                                            <form method="post" action="{{ route('dosen.destroy' , $data -> id ) }}">
+                                            <form method="post" action="{{ route('user2.destroy' , $data -> id ) }}">
 
                                                 {{csrf_field()}}
                                                 {{method_field('DELETE')}}
 
-                                                <p class="v-align-middle semi-bold"><a href="{{ route('dosen.edit' , $data->id) }}" class=" btn btn-sm btn-primary">Edit</a></p>
+                                                <p class="v-align-middle semi-bold"><a href="{{ route('user2.edit' , $data->id) }}" class=" btn btn-sm btn-primary">Edit</a></p>
 
                                                 <button type="submit" onclick="return confirm('Yakin Ingin Menghapus Data?')">Delete</button>
 

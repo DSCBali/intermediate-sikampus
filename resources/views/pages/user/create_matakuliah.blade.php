@@ -14,7 +14,7 @@
                           <input type="text" class="form-control" name="name" required="">
                           </div>
 
-                          <div class="form-group">
+                          <!-- <div class="form-group">
                               <label> Pilih Dosen Pengajar</label>
                               <select class="form-control" name="lecturer_id">
 
@@ -24,7 +24,7 @@
 
                                   @endforeach
                               </select>
-                          </div>
+                          </div> -->
 
                             <button class="btn btn-success btn-con">Simpan</button>
                             <button class="btn btn-default btn-con">Batal</button>

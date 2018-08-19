@@ -20,7 +20,7 @@
                                           <th style="">Address</th>
 
                                           <th style="">Gender</th>
-                                          <th style="">Class Id</th>
+                                          <th style="">Kelas</th>
                                           {{--<th style="">Pilihan</th>--}}
 
 
@@ -55,7 +55,7 @@
                                             <p>{{$data->gender}}</p>
                                         </td>
                                         <td class="v-align-middle semi-bold">
-                                            <p>{{$data->class_id}}</p>
+                                            <p>{{$data->get_student->name}}</p>
                                         </td>
                                         {{--<td class="v-align-middle semi-bold">--}}
 

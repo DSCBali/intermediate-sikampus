@@ -1,6 +1,6 @@
 @extends('layouts.app_admin')
 @section('content')
-    <h5>Jadwal</h5>
+    <h5>MMata Kuliah</h5>
     <div id="card-advance" class="card card-default">
 
             <div class="card-body">
@@ -14,12 +14,6 @@
 
                                         <th style="">No</th>
                                         <th style="">Name</th>
-                                        <th style="">Lecturer Id</th>
-                                        {{--<th style="">dosen</th>--}}
-                                        {{--<th style="">class</th>--}}
-                                          {{--<th style="">Date Of Birth</th>--}}
-                                          {{--<th style="">Phone</th>--}}
-                                          {{--<th style="">Address</th>--}}
                                           <th style="">Pilihan</th>
                                     </tr>
                                 </thead>
@@ -35,9 +29,7 @@
                                         <td class="v-align-middle semi-bold">
                                             <p>{{$data->name}}</p>
                                         </td>
-                                        <td class="v-align-middle semi-bold">
-                                            <p>{{$data->lecturer_id}}</p>
-                                        </td>
+
 
 
 

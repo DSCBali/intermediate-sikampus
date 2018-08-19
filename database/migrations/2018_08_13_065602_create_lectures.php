@@ -32,8 +32,6 @@ class CreateLectures extends Migration
      */
     public function down()
     {
-        Schema::table('lectures', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('lectures');
     }
 }

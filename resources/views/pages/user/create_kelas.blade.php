@@ -7,10 +7,10 @@
 
     <div id="card-advance" class="card card-default">
             <div class="card-body">
-                    <form method="post" action="{{ action('DataKelasController@store') }}">
+                    <form method="post" action="{{ action('KelasController@store') }}">
                      {{csrf_field()}}
                       <div class="form-group">
-                          <label>Nama</label>
+                          <label>Nama Kelas</label>
                           <input type="text" class="form-control" name="name" required="">
                           </div>
                           <label>Maksimal Mahasiswa</label>

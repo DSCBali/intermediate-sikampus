@@ -5,7 +5,7 @@
 
             <div class="card-body">
 
-                <a href="{{route('JadwalMatkul.create')}}" class="text-right pull-right btn btn-complete btn-cons">Tambah Baru</a>
+                <a href="{{route('jadwalmatkul.create')}}" class="text-right pull-right btn btn-complete btn-cons">Tambah Baru</a>
                     <div class="table-responsive">
                             <table class="table table-striped" id="stripedTable">
 
@@ -15,7 +15,7 @@
                                         <th style="">No</th>
                                         <th style="">Hari</th>
                                         <th style="">time</th>
-                                        <th style="">dosen</th>
+                                        <th style="">Mata Kuliah</th>
                                         <th style="">class</th>
                                           {{--<th style="">Date Of Birth</th>--}}
                                           {{--<th style="">Phone</th>--}}
@@ -42,11 +42,11 @@
 
 
                                         <td class="v-align-middle semi-bold">
-                                            <p value="{{$data->course_id}}">{{$data->course_id}}</p>
+                                            <p>{{$data->get_course->name}}</p>
                                         </td>
 
                                         <td class="v-align-middle semi-bold">
-                                            <p>{{$data->class_id}}</p>
+                                            <p>{{$data->get_class->name}}</p>
                                         </td>
 
                                         {{--<td class="v-align-middle semi-bold">--}}
@@ -63,12 +63,12 @@
                                         {{--</td>--}}
                                         <td class="v-align-middle semi-bold">
 
-                                            <form method="post" action="{{ route('matkul.destroy' , $data -> id ) }}">
+                                            <form method="post" action="{{ route('jadwalmatkul.destroy' , $data -> id ) }}">
 
                                                 {{csrf_field()}}
                                                 {{method_field('DELETE')}}
 
-                                                <p class="v-align-middle semi-bold"><a href="{{ route('dosen.edit' , $data->id) }}" class=" btn btn-sm btn-primary">Edit</a></p>
+                                                <p class="v-align-middle semi-bold"><a href="{{ route('jadwalmatkul.edit' , $data->id) }}" class=" btn btn-sm btn-primary">Edit</a></p>
 
                                                 <button type="submit" onclick="return confirm('Yakin Ingin Menghapus Data?')">Delete</button>
 

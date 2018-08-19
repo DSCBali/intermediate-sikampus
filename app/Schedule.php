@@ -10,12 +10,12 @@ class Schedule extends Model
 
   public function get_course()
   {
-         $this->belongsTo('App\Course' , 'course_id');
+         return $this->belongsTo('App\Course' , 'course_id');
   }
 
   public function get_class()
   {
-         $this->belongsTo('App\kelas','class_id');
+         return $this->belongsTo('App\kelas','class_id');
   }
 
 

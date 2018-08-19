@@ -60,7 +60,7 @@
                     <span class="bg-success icon-thumbnail"><i class="pg-arrow_right"></i></span>
                 </li>
                 <li class="m-t-30 ">
-                    <a href="/matkul" class="detailed">
+                    <a href="/jadwalmatkul" class="detailed">
                         <span class="title">Jadwal</span>
 
                     </a>

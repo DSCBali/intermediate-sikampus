@@ -32,8 +32,6 @@ class CreateStaffs extends Migration
      */
     public function down()
     {
-        Schema::table('staffs', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('staff');
     }
 }

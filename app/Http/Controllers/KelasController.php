@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
 use App\kelas;
+use Validator;
 
 class KelasController extends Controller
 {
@@ -56,7 +57,23 @@ class KelasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Validator::make(request()->all(), [
+
+
+            'name' => 'required|max:20|unique:kelas' ,
+            'max_students' => 'required|max:30|'
+
+
+        ]);
+
+        $kelas = new Kelas();
+        $kelas->name = $request->input('name');
+        $kelas->max_students = $request->input('max_students');
+
+
+        $kelas->save();
+
+        return redirect('/kelas')->with('alert-success','Data berhasi dihapus!');
     }
 
     /**
@@ -107,5 +124,14 @@ class KelasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
     //     */
+
+
+    public function destroy($id)
+    {
+        $data = kelas::where('id' , $id)->first();
+        $data->delete();
+        return redirect('kelas')->with('alert-success','Data berhasi dihapus!');
+    }
+
 
 }

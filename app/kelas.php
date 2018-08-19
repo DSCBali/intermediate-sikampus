@@ -10,11 +10,11 @@ class kelas extends Model
 
     public function get_student()
     {
-        $this->hasMany('App\Student' , 'class_id');
+        return $this->hasMany('App\Student' , 'class_id');
     }
 
     public function get_schedule()
     {
-        $this->hasMany('App\Schedule' , 'class_id');
+        return $this->hasMany('App\Schedule' , 'class_id');
     }
 }

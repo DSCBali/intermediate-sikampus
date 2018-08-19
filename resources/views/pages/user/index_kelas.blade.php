@@ -1,6 +1,6 @@
 @extends('layouts.app_admin')
 @section('content')
-    <h5>Jadwal</h5>
+    <h5>Kelas</h5>
     <div id="card-advance" class="card card-default">
 
             <div class="card-body">
@@ -63,12 +63,12 @@
                                         {{--</td>--}}
                                         <td class="v-align-middle semi-bold">
 
-                                            <form method="post" action="{{ route('datakelas.destroy' , $data -> id ) }}">
+                                            <form method="post" action="{{ route('kelas.destroy' , $data -> id ) }}">
 
                                                 {{csrf_field()}}
                                                 {{method_field('DELETE')}}
 
-                                                <p class="v-align-middle semi-bold"><a href="{{ route('dosen.edit' , $data->id) }}" class=" btn btn-sm btn-primary">Edit</a></p>
+                                                <p class="v-align-middle semi-bold"><a href="{{ route('kelas.edit' , $data->id) }}" class=" btn btn-sm btn-primary">Edit</a></p>
 
                                                 <button type="submit" onclick="return confirm('Yakin Ingin Menghapus Data?')">Delete</button>
 

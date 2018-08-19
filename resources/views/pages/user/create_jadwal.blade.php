@@ -8,7 +8,7 @@
     <div id="card-advance" class="card card-default">
 
             <div class="card-body">
-                    <form method="post" action="{{ action('MatkulController@store') }}">
+                    <form method="post" action="{{ action('JadwalMatkulController@store') }}">
                      {{csrf_field()}}
                       <div class="form-group">
                           <label>Hari</label>

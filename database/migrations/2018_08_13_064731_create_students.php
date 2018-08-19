@@ -33,8 +33,6 @@ class CreateStudents extends Migration
      */
     public function down()
     {
-        Schema::table('students', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('students');
     }
 }

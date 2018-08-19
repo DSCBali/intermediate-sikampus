@@ -10,12 +10,12 @@ class Course extends Model
 
  public function get_schedule()
  {
-       $this->hasMany('App\Schedule','id');
+       return $this->hasMany('App\Schedule','id');
  }
 
  public function get_lectures()
  {
-       $this->belongsTo('App\Lecture' , 'lecturer_id');
+       return $this->belongsTo('App\Lecture' , 'lecturer_id');
  }
 
 }

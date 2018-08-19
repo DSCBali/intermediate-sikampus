@@ -8,7 +8,7 @@
     <div id="card-advance" class="card card-default">
 
             <div class="card-body">
-                    <form method="post" action="{{ action('DataDosenController@store') }}">
+                    <form method="post" action="{{ action('DosenController@store') }}">
                      {{csrf_field()}}
                       <div class="form-group">
                           <label>Nama</label>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 use App\Schedule;
 use App\Course;
@@ -22,11 +23,13 @@ class JadwalMatkulController extends Controller
         }
         else{
 
-            $jadwal = new Course;
 
-            $jadwals = $jadwal->all();
+                  $jadwal = new Schedule();
+                  $dosen = new Course();
 
-            return view('pages.user.index_jadwal', ['jadwals',$jadwals]);
+                  $jadwals = $jadwal->all();
+                  $dosens = $dosen->all();
+                  return view('pages.user.index_jadwal')->with('jadwals', $jadwals , 'dosens' , $dosens);
 
         }
 
@@ -43,7 +46,13 @@ class JadwalMatkulController extends Controller
     }
     public function store(Request $request)
     {
-        //
+      $jadwal = new Schedule();
+      $jadwal->day = $request->input('day');
+      $jadwal->time = $request->input('time');
+      $jadwal->course_id = $request->input('dosen');
+      $jadwal->class_id = $request->input('kelas');
+      $jadwal->save();
+      return redirect('/jadwalmatkul')->with('alert-success','Data Berhasil Di Tambahkan');
     }
     public function show($id)
     {
@@ -67,6 +76,8 @@ class JadwalMatkulController extends Controller
     }
     public function destroy($id)
     {
-
+              $data = Schedule::where('id' , $id)->first();
+              $data->delete();
+              return redirect('jadwalmatkul')->with('alert-success','Data berhasi dihapus!');
     }
 }

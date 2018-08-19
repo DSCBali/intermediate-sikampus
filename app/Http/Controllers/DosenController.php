@@ -7,6 +7,8 @@ use App\Course;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
+use Validator;
+
 class DosenController extends Controller
 {
     /**
@@ -56,7 +58,26 @@ class DosenController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+
+              Validator::make(request()->all(), [
+
+      //            'nim' => 'required|min:9|unique:students' ,
+                  'name' => 'required|max:20|unique:students'
+
+              ]);
+
+              $dosens = new Lecture();
+              $dosens->name = $request->input('name');
+              $dosens->gender = $request->input('gender');
+              $dosens->dob = $request->input('dob');
+              $dosens->phone = $request->input('phone');
+              $dosens->address = $request->input('address');
+              $dosens->course_id = $request->input('matkul');
+
+              $dosens->save();
+
+              return redirect('/user2');
     }
 
     /**
@@ -78,7 +99,7 @@ class DosenController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
@@ -106,9 +127,12 @@ class DosenController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
-//     */
-//    public function destroy($id)
-//    {
-//
-//    }
+    **/
+   public function destroy($id)
+   {
+
+             $data = Lecture::where('id' , $id)->first();
+             $data->delete();
+             return redirect('user2')->with('alert-success','Data berhasi dihapus!');
+   }
 }

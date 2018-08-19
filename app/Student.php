@@ -10,7 +10,7 @@ class Student extends Model
 
   public function get_student()
   {
-         $this->belongsTo('App\kelas' , 'class_id');
+        return $this->belongsTo('App\kelas' , 'class_id');
   }
 
 
