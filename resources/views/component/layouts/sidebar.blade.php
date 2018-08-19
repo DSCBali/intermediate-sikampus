@@ -44,7 +44,7 @@
                     <span class="bg-success icon-thumbnail"><i class="pg-home"></i></span>
                 </li>
                 <li class="">
-                    <a href="{{route('user.index')}}"><span class="title">User</span></a>
+                    <a href="{{route('student.index')}}"><span class="title">student</span></a>
                     <span class="icon-thumbnail"><i class="pg-social"></i></span>
                 </li>
                 <li>
@@ -62,7 +62,7 @@
                         </li>
                     </ul>
                 </li>
-                
+
             </ul>
             <div class="clearfix"></div>
         </div>
