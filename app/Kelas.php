@@ -22,4 +22,8 @@ class Kelas extends Model
         return true;
       }
     }
+
+    public function courses(){
+      $this->belongsTo(Course::class, 'schedules');
+    }
 }

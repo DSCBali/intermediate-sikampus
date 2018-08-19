@@ -33,4 +33,8 @@ class Student extends Model
   public function plainGenre(){
     return $this->attributes['genre'];
   }
+
+  public function schedules(){
+    $this->studentClass->courses;
+  }
 }

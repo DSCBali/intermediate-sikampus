@@ -44,6 +44,7 @@ Route::prefix('staff')->group(function() {
     Route::resource('student','StudentController');
     Route::resource('lecturer','LecturerController');
     Route::resource('course','CourseController');
+    Route::resource('schedule','ScheduleController');
   });
 });
 Auth::routes();

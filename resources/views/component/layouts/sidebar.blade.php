@@ -58,8 +58,12 @@
                     <a href="{{ route('class.index') }}"><span class="title">Kelas</span></a>
                     <span class="icon-thumbnail"><i class="fa fa-graduation-cap"></i></span>
                 </li>
+                <li class="{{ (url()->current() === route('schedule.index')) ? 'active':'' }}">
+                    <a href="{{ route('schedule.index') }}"><span class="title">Jadwal</span></a>
+                    <span class="icon-thumbnail"><i class="fa fa-calendar"></i></span>
+                </li>
                 <li class="">
-                    <a href="#"><span class="title">Jadwal</span></a>
+                    <a href=""><span class="title">Staff</span></a>
                     <span class="icon-thumbnail"><i class="fa fa-calendar"></i></span>
                 </li>
                 <li>

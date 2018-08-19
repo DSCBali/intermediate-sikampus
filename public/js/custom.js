@@ -16,4 +16,12 @@
       autoclose: true,
     });
   }
+  setDatepicker2();
+  function setDatepicker2(){
+    $('.datepicker2').datepicker({
+      format: 'yyyy-mm-dd',
+      autoclose: true,
+      startDate: new Date()
+    });
+  }
 })(jQuery)
