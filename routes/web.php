@@ -43,6 +43,7 @@ Route::prefix('staff')->group(function() {
     Route::resource('class','ClassController');
     Route::resource('student','StudentController');
     Route::resource('lecturer','LecturerController');
+    Route::resource('course','CourseController');
   });
 });
 Auth::routes();

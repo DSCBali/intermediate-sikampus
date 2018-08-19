@@ -13,7 +13,14 @@ class StoreCourseRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
+    }
+
+    public function messages()
+    {
+        return [
+            'required'      => 'Kolom ini masih kosong'
+        ];
     }
 
     /**
@@ -24,7 +31,8 @@ class StoreCourseRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name'        => 'required|string',
+            'lecturer_id' => 'required|integer'
         ];
     }
 }

@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Course;
+use App\Lecturer;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreCourseRequest;
-use App\Course;
 
 class CourseController extends Controller
 {
@@ -16,7 +16,8 @@ class CourseController extends Controller
      */
     public function index()
     {
-        $courses =
+        $courses = Course::paginate(15);
+        return view('pages.course.index', ['courses' => $courses]);
     }
 
     /**
@@ -26,7 +27,8 @@ class CourseController extends Controller
      */
     public function create()
     {
-        //
+        $lecturers = Lecturer::doesntHave('course')->get();
+        return view('pages.course.create', ['lecturers' => $lecturers]);
     }
 
     /**
@@ -35,9 +37,10 @@ class CourseController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreCourseRequest $request)
     {
-        //
+        Course::create($request->all());
+        return redirect()->route('course.index')->with('success', 'Data matakuliah berhasil ditambah!');
     }
 
     /**
@@ -59,7 +62,7 @@ class CourseController extends Controller
      */
     public function edit(Course $course)
     {
-        //
+        return view('pages.lecturer.edit', ['course' => $course]);
     }
 
     /**
@@ -69,9 +72,10 @@ class CourseController extends Controller
      * @param  \App\Course  $course
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Course $course)
+    public function update(StoreCourseRequest $request, Course $course)
     {
-        //
+        $course->update($request->all());
+        return redirect()->route('course.index')->with('success', 'Data matakuliah berhasil diedit!');
     }
 
     /**
@@ -82,6 +86,7 @@ class CourseController extends Controller
      */
     public function destroy(Course $course)
     {
-        //
+        $course->delete();
+        return redirect()->route('course.index')->with('success', 'Data matakuliah berhasil dihapus!');
     }
 }

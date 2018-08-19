@@ -50,8 +50,8 @@
                     <a href="{{ route('lecturer.index') }}"><span class="title">Dosen</span></a>
                     <span class="icon-thumbnail"><i class="fa fa-users"></i></span>
                 </li>
-                <li>
-                    <a href="#"><span class="title">Matakuliah</span></a>
+                <li class="{{ (url()->current() === route('course.index')) ? 'active':'' }}">
+                    <a href="{{ route('course.index') }}"><span class="title">Matakuliah</span></a>
                     <span class="icon-thumbnail"><i class="fa fa-book"></i></span>
                 </li>
                 <li class="{{ (url()->current() === route('class.index')) ? 'active':'' }}">

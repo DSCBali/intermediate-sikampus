@@ -16,6 +16,14 @@ class StoreLecturerRequest extends FormRequest
         return true;
     }
 
+    public function messages(){
+      return [
+        'required'    => 'Kolom ini masih kosong',
+        'max.phone'   => 'Maximal karakter nomor telepon adalah 15 karakter',
+        'name.max'    => 'Maximal karakter nomor telepon adalah 150 karakter'
+      ];
+    }
+
     /**
      * Get the validation rules that apply to the request.
      *
