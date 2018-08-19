@@ -95,9 +95,7 @@ class DataMatkulController extends Controller
      */
     public function show($id)
     {
-
-
-        // return Student::find(1)->nim->name->phone;
+                   return view('pages.user.update_matakuliah');
     }
 
     /**
@@ -106,17 +104,21 @@ class DataMatkulController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request , $id)
     {
-        //
+          $req = [
+
+              'name' => $request->name ,
+              'lecture_id' => $request->lecture_id
+
+          ];
+
+          $data = Course::where('id' , $id)->update($req);
+          return redirect()->route('matkul2.index');
     }
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
+
+
     public function update(Request $request, $id)
     {
 
@@ -132,6 +134,6 @@ class DataMatkulController extends Controller
     {
         $data = Course::where('id' , $id)->first();
         $data->delete();
-        return redirect('kelas')->with('alert-success','Data berhasi dihapus!');
+        return redirect('matkul2')->with('alert-success','Data berhasi dihapus!');
     }
 }
