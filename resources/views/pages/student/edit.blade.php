@@ -73,9 +73,9 @@
                                   @endif
                                 @endforeach
                               </select>
-                              @if ($errors->has('adddress'))
+                              @if ($errors->has('class_id'))
                                   <span class="badge badge-danger">
-                                      <strong>{{ $errors->first('adddress') }}</strong>
+                                      <strong>{{ $errors->first('class_id') }}</strong>
                                   </span>
                               @endif
                             </div>

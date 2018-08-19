@@ -43,11 +43,12 @@ class StoreStudentRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'    => 'required|string|max:150',
-            'genre'   => 'required|integer|digits:1',
-            'dob'     => 'required',
-            'phone'   => 'required|string|max:15',
-            'address' => 'required'
+            'name'      => 'required|string|max:150',
+            'genre'     => 'required|integer|digits:1',
+            'dob'       => 'required',
+            'phone'     => 'required|string|max:15',
+            'address'   => 'required',
+            'class_id'  => 'required|integer'
         ];
     }
 }

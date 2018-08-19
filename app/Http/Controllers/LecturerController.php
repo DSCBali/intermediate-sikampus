@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Lecturer;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreLecturerRequest;
 
 class LecturerController extends Controller
 {
@@ -14,7 +15,8 @@ class LecturerController extends Controller
      */
     public function index()
     {
-        //
+        $lecturers = Lecturer::paginate(15);
+        return view('pages.lecturer.index',['lecturers' => $lecturers]);
     }
 
     /**
@@ -24,7 +26,7 @@ class LecturerController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.lecturer.create');
     }
 
     /**
@@ -33,9 +35,10 @@ class LecturerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreLecturerRequest $request)
     {
-        //
+        Lecturer::create($request->all());
+        return redirect()->route('lecturer.index')->with('success', 'Data dosen berhasil ditambahkan!');
     }
 
     /**
@@ -57,7 +60,7 @@ class LecturerController extends Controller
      */
     public function edit(Lecturer $lecturer)
     {
-        //
+        return view('pages.lecturer.edit', ['lecturer' => $lecturer]);
     }
 
     /**
@@ -67,9 +70,10 @@ class LecturerController extends Controller
      * @param  \App\Lecturer  $lecturer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Lecturer $lecturer)
+    public function update(StoreLecturerRequest $request, Lecturer $lecturer)
     {
-        //
+        $lecturer->update($request->all());
+        return redirect()->route('lecturer.index')->with('success','Data dosen berhasil diedit');
     }
 
     /**
@@ -80,6 +84,7 @@ class LecturerController extends Controller
      */
     public function destroy(Lecturer $lecturer)
     {
-        //
+        $lecturer->delete();
+        return redirect()->route('lecturer.index')->with('success','Data dosen berhasil dihapus');
     }
 }

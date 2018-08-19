@@ -42,6 +42,7 @@ Route::prefix('staff')->group(function() {
     })->name('staff.dashboard');
     Route::resource('class','ClassController');
     Route::resource('student','StudentController');
+    Route::resource('lecturer','LecturerController');
   });
 });
 Auth::routes();

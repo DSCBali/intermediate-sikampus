@@ -46,8 +46,8 @@
                     <a href="{{ route('student.index') }}"><span class="title">Mahasiswa</span></a>
                     <span class="icon-thumbnail"><i class="fa fa-users"></i></span>
                 </li>
-                <li class="">
-                    <a href="#"><span class="title">Dosen</span></a>
+                <li class="{{ (url()->current() === route('lecturer.index')) ? 'active':'' }}">
+                    <a href="{{ route('lecturer.index') }}"><span class="title">Dosen</span></a>
                     <span class="icon-thumbnail"><i class="fa fa-users"></i></span>
                 </li>
                 <li>
