@@ -11,12 +11,11 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function() {
     return view('pages.dashboard');
 });
 
-Route::resource('user','UserController');
-Route::resource('mahasiswa',function(){
-    return view('pages.college');
-});
-
+Route::resource('student','StudentController');
+Route::resource('course','Coursecontroller');
+Route::resource('class','Classcontroller');
+Route::resource('lecturer','Lecturercontroller');
