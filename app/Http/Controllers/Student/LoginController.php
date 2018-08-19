@@ -1,13 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\Student;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Auth;
 
 class LoginController extends Controller
 {
+    use AuthenticatesUsers;
     /*
     |--------------------------------------------------------------------------
     | Login Controller
@@ -18,16 +20,7 @@ class LoginController extends Controller
     | to conveniently provide its functionality to your applications.
     |
     */
-
-    use AuthenticatesUsers;
-
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/';
-
+    protected $redirectTo = 'student/dashboard';
     /**
      * Create a new controller instance.
      *
@@ -35,13 +28,27 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
+        $this->middleware('guest:student')->except('logout');
     }
 
     public function logout(Request $request)
     {
         $this->guard()->logout();
         $request->session()->invalidate();
-        return redirect('/login');
+        return redirect('/student/login');
+    }
+
+    public function username()
+    {
+        return 'nim';
+    }
+
+    public function showLoginForm()
+    {
+      return view('student-auth.login');
+    }
+
+    protected function guard(){
+      return Auth::guard('student');
     }
 }

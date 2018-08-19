@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\Staf;
 
-use App\User;
+use App\Staf;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/login';
+    protected $redirectTo = 'staf/login';
 
     /**
      * Create a new controller instance.
@@ -37,7 +37,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware('guest:staf');
     }
 
     /**
@@ -49,8 +49,7 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string',
-            'email' => 'required|string|email|unique:users',
+            'username' => 'required|string|max:100',
             'password' => 'required|string|min:6|confirmed',
         ]);
     }
@@ -63,9 +62,12 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
+        return Staff::create([
+            'username' => $data['username'],
+            'name'     => $data['name'],
+            'dob'      => $data['dob'],
+            'genre'    => $data['genre'],
+            'phone'    => $data['phone'],
             'password' => Hash::make($data['password']),
         ]);
     }

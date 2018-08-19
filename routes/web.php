@@ -12,11 +12,39 @@
 */
 
 Route::get('/', function () {
-    return view('pages.dashboard');
+    return redirect()->route('staff.login');
 });
 
-Route::resource('user','UserController');
-Route::resource('mahasiswa',function(){
-    return view('pages.college');
-});
+Route::resource('mahasiswa','MahasiswaController');
 
+Route::prefix('student')->group(function() {
+  Route::get('login', function(){
+    return view('student-auth.login');
+  })->middleware('guest:student');
+  Route::get('dashboard','StudentDashboardController@dashboard')->name('student.dashboard');
+  Route::namespace('\Student')->group(function(){
+    Route::post('login','LoginController@login')->name('student.login');
+    Route::post('logout','LoginController@logout')->name('student.logout');
+  });
+});
+Route::prefix('staff')->group(function() {
+  Route::get('login', function(){
+    return view('staff-auth.login');
+  })->name('staff.login')->middleware('guest:staff');
+  Route::namespace('\Staff')->group(function(){
+    Route::post('login','LoginController@login')->name('staff.login');
+    Route::post('logout','LoginController@logout')->name('staff.logout');
+  });
+  Route::middleware('auth:staff')->group(function(){
+    Route::get('dashboard', function(){
+      return view('pages.dashboard');
+    })->name('staff.dashboard');
+    Route::resource('class','ClassController');
+    Route::resource('student','StudentController');
+    Route::resource('lecturer','LecturerController');
+    Route::resource('course','CourseController');
+    Route::resource('schedule','ScheduleController');
+    Route::resource('staff','StaffController');
+  });
+});
+Auth::routes();

@@ -35,35 +35,13 @@
 
         <div class="sidebar-menu">
 
-            <ul class="menu-items">
-                <li class="m-t-30 ">
-                    <a href="index.html" class="detailed">
-                        <span class="title">Dashboard</span>
-                        <span class="details">Additional Text</span>
-                    </a>
-                    <span class="bg-success icon-thumbnail"><i class="pg-home"></i></span>
-                </li>
-                <li class="">
-                    <a href="{{route('user.index')}}"><span class="title">User</span></a>
-                    <span class="icon-thumbnail"><i class="pg-social"></i></span>
-                </li>
-                <li>
-                    <a href="javascript:;"><span class="title">Dropdown</span>
-                        <span class=" arrow"></span></a>
-                    <span class="icon-thumbnail"><i class="pg-calender"></i></span>
-                    <ul class="sub-menu">
-                        <li class="">
-                            <a href="#">Sub Menu 1</a>
-                            <span class="icon-thumbnail">c</span>
-                        </li>
-                        <li class="">
-                            <a href="#">Sub Menu 2</a>
-                            <span class="icon-thumbnail">M</span>
-                        </li>
-                    </ul>
-                </li>
-                
-            </ul>
+            @if (auth()->check())
+              @if (auth()->guard('staff'))
+                @include('partials.sidebar-staff')
+              @else
+                @include('partials.sidebar-student')
+              @endif
+            @endif
             <div class="clearfix"></div>
         </div>
 
