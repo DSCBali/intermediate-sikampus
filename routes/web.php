@@ -27,25 +27,26 @@ Route::resource('user','UserController');
 
 //PAGE DOSEN
 Route::resource('user2' , 'DosenController');
-Route::get('/dosen/{id}/destroy' , 'DataDosenController@destroy');
-Route::get('/dosen/{id}/edit' , 'DosenController@edit');
+//Route::get('/user2/{id}/destroy' , 'DataDosenController@destroy');
+//Route::get('/user2/{id}/edit' , 'DosenController@edit');
+//Route::post('/user2/{id}/update' , 'DosenController@update');
 //-----------------------------------------------------------
 
 //PAGE jadwal
 Route::resource('jadwalmatkul' , 'JadwalMatkulController');
-Route::get('/jadwal/{id}/destroy' , 'JadwalMatkulController@destroy');
-Route::get('/jadwal/{id}/edit' , 'MatkulController@edit');
+//Route::get('/jadwalmatkul/{id}/destroy' , 'JadwalMatkulController@destroy');
+//Route::get('/jadwalmatkul/{id}/edit' , 'MatkulController@edit');
 //-----------------------------------------------------------
 
 //Page Kelas
 Route::resource('kelas' , 'KelasController');
-Route::get('/data/{id}/destroy' , 'DataKelasController@destroy');
-Route::get('/data/{id}/edit' , 'MatkulController@edit');
+//Route::get('/kelas/{id}/destroy' , 'DataKelasController@destroy');
+//Route::get('/kelas/{id}/edit' , 'MatkulController@edit');
 //-----------------------------------------------------------
 
 
 //Page Mata Kuliah
 Route::resource('matkul2' , 'DataMatkulController');
-Route::get('/matkul/{id}/destroy' , 'DataMatkulController@destroy');
-Route::get('/jadwal/{id}/edit' , 'MatkulController@edit');
+Route::get('/matkul2/{id}/destroy' , 'DataMatkulController@destroy');
+Route::get('/matkul2/{id}/edit' , 'MatkulController@edit');
 //-----------------------------------------------------------

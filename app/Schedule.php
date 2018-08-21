@@ -6,7 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Schedule extends Model
 {
-  protected $table = 'schedules';
+  protected $fillable = [
+
+      'day' ,
+      'time' ,
+      'course_id' ,
+      'class_id' ,
+
+
+  ];
 
   public function get_course()
   {

@@ -15,8 +15,10 @@
                                         <th style="">No</th>
                                         <th style="">Hari</th>
                                         <th style="">time</th>
+                                        <th style="">pengajar</th>
                                         <th style="">Mata Kuliah</th>
                                         <th style="">class</th>
+
                                           {{--<th style="">Date Of Birth</th>--}}
                                           {{--<th style="">Phone</th>--}}
                                           {{--<th style="">Address</th>--}}
@@ -38,9 +40,9 @@
                                         <td class="v-align-middle semi-bold">
                                             <p>{{$data->time}}</p>
                                         </td>
-
-
-
+                                        <td class="v-align-middle semi-bold">
+                                            <p>{{$data->get_course->get_lectures->name}}</p>
+                                        </td>
                                         <td class="v-align-middle semi-bold">
                                             <p>{{$data->get_course->name}}</p>
                                         </td>
@@ -48,6 +50,8 @@
                                         <td class="v-align-middle semi-bold">
                                             <p>{{$data->get_class->name}}</p>
                                         </td>
+
+
 
                                         {{--<td class="v-align-middle semi-bold">--}}
                                             {{--<p>{{$data->dob}}</p>--}}

@@ -54,7 +54,7 @@
                                                 {{csrf_field()}}
                                                 {{method_field('DELETE')}}
 
-                                                <p class="v-align-middle semi-bold"><a href="{{ route('user2.edit' , $data->id) }}" class=" btn btn-sm btn-primary">Edit</a></p>
+                                                <p class="v-align-middle semi-bold"><a href="{{ route('user2.edit' , ['id' => $data -> id]) }}" class=" btn btn-sm btn-primary">Edit</a></p>
 
                                                 <button type="submit" onclick="return confirm('Yakin Ingin Menghapus Data?')">Delete</button>
 

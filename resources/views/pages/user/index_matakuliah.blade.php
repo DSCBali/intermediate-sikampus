@@ -14,7 +14,10 @@
 
                                         <th style="">No</th>
                                         <th style="">Name</th>
+                                        {{--<th style="">Pengajar</th>--}}
                                           <th style="">Pilihan</th>
+
+
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -28,7 +31,11 @@
                                       </td>
                                         <td class="v-align-middle semi-bold">
                                             <p>{{$data->name}}</p>
-                                        </td>
+
+                                        {{--<td class="v-align-middle semi-bold">--}}
+                                            {{--<p>{{$data->get_lectures->name}}</p>--}}
+                                        {{--</td>--}}
+
 
 
 
