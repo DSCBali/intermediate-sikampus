@@ -1,6 +1,6 @@
 @extends('layouts.app_admin')
 @section('content')
-    <h5>MMata Kuliah</h5>
+    <h5>Mata Kuliah</h5>
     <div id="card-advance" class="card card-default">
 
             <div class="card-body">

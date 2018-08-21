@@ -85,10 +85,8 @@ class DosenController extends Controller
         else
             {
             $data = Lecture::find($id);
-            $datas = Lecture::get();
-            $course = Course::get();
-            $courses = New Course;
-            return view('pages.user.update_dosen', compact('data'))->with(['course' => $course])->with(['datas' => $datas])->with('courses', $courses);
+            $matakuliah = Course::get();
+            return view('pages.user.update_dosen', compact('data') , ['matakuliah' => $matakuliah]);
             }
     }
 

@@ -34,25 +34,33 @@ class JadwalMatkulController extends Controller
         }
 
     }
-    public function pindah()
-    {
-        return view('pages.user.edit');
-    }
     public function create()
     {
-        $dosen = Lecture::get();
-        $kelas = kelas::get();
-        return view('pages.user.create_jadwal' , ['dosen'=>$dosen] , ['kelas'=>$kelas]);
+        if(!Session::get('login')){
+            return redirect('/login')->with('alert','Kamu harus login dulu');
+        }
+        else {
+            $dosen = Lecture::get();
+            $kelas = kelas::get();
+            return view('pages.user.create_jadwal', ['dosen' => $dosen], ['kelas' => $kelas]);
+        }
     }
     public function store(Request $request)
     {
-      $jadwal = new Schedule();
-      $jadwal->day = $request->input('day');
-      $jadwal->time = $request->input('time');
-      $jadwal->course_id = $request->input('dosen');
-      $jadwal->class_id = $request->input('kelas');
-      $jadwal->save();
-      return redirect('/jadwalmatkul')->with('alert-success','Data Berhasil Di Tambahkan');
+        if (!Session::get('login')) {
+            return redirect('/login')->with('alert', 'Kamu harus login dulu');
+        }
+        else
+            {
+
+        $jadwal = new Schedule();
+        $jadwal->day = $request->input('day');
+        $jadwal->time = $request->input('time');
+        $jadwal->course_id = $request->input('dosen');
+        $jadwal->class_id = $request->input('kelas');
+        $jadwal->save();
+        return redirect('/jadwalmatkul')->with('alert-success', 'Data Berhasil Di Tambahkan');
+       }
     }
     public function show($id)
     {
@@ -60,24 +68,48 @@ class JadwalMatkulController extends Controller
     }
     public function edit($id)
     {
-        //
+        if(!Session::get('login')){
+            return redirect('/login')->with('alert','Kamu harus login dulu');
+        }
+        else
+        {
+            $data = Schedule::find($id);
+            $course = Course::get();
+            $kelas = kelas::get();
+            return view('pages.user.update_jadwal', compact('data') , ['course' => $course])->with(['kelas' => $kelas]);
+        }
     }
     public function update(Request $request, $id)
     {
-        $jadwal = Schedule::where('id',$id)->first();
-        $jadwal->nim = $request->nim;
-        $jadwal->name = $request->name;
-        $jadwal->dob = $request->dob;
-        $jadwal->address = $request->address;
-        $jadwal->gender = $request->input('gender');
-        $jadwal->class_id = $request->input('kelas');
-        $jadwal->save();
-        return redirect('/user2')->with('alert-success','Data berhasil diubah!');
+        if(!Session::get('login')){
+            return redirect('/login')->with('alert','Kamu harus login dulu');
+        }
+        else {
+
+
+
+            $req = [
+                'day' => $request->day,
+                'time' => $request->time,
+                'course_id' => $request->matkul,
+                'class_id' => $request->kelas
+            ];
+
+            $data = Schedule::where('id', $id)->update($req);
+            return redirect('jadwalmatkul')->with('alert-succes', 'Data Berhasil Di Ubah!!');
+
+        }
     }
     public function destroy($id)
     {
-              $data = Schedule::where('id' , $id)->first();
-              $data->delete();
-              return redirect('jadwalmatkul')->with('alert-success','Data berhasi dihapus!');
+        if(!Session::get('login')){
+            return redirect('/login')->with('alert','Kamu harus login dulu');
+        }
+        else
+            {
+            $data = Schedule::where('id', $id)->first();
+            $data->delete();
+            return redirect('jadwalmatkul')->with('alert-success', 'Data berhasi dihapus!');
+        }
     }
 }

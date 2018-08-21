@@ -7,11 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Course extends Model
 {
 
-  protected $fillable =
-      [
-          'name' , 'lecturer_id'
-
-      ];
+  protected $table = 'courses';
 
  public function get_schedule()
  {

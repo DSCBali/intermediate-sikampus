@@ -45,6 +45,10 @@
                                 <label>Pilih Mata Kuliah</label>
                                 <select class="form-control" name="matkul">
                                         <option value="{{$data->course_id}}">{{$data->get_course->name}}</option>
+                                    @foreach($matakuliah as $matkul)
+                                          <option value="{{$matkul->id}}">{{$matkul->name}}</option>
+                                        @endforeach
+
                                 </select>
                             </div>
 
