@@ -42,11 +42,16 @@ class DataMatkulController extends Controller
     {
 
 
-        $courses = Course::get();
-        $dosen = Lecture::get();
-        return view ('pages.user.create_matakuliah' , ['courses'=>$courses] , ['dosen' => $dosen]);
+        if(!Session::get('login')){
+            return redirect('/login')->with('alert','Kamu harus login dulu');
+        }
+        else {
 
+            $courses = Course::get();
+            $dosen = Lecture::get();
+            return view('pages.user.create_matakuliah', ['courses' => $courses], ['dosen' => $dosen]);
 
+        }
 
 
     }
@@ -66,74 +71,88 @@ class DataMatkulController extends Controller
     {
 
 
-        Validator::make(request()->all(), [
+        if(!Session::get('login')){
+            return redirect('/login')->with('alert','Kamu harus login dulu');
+        }
+        else {
+
+            Validator::make(request()->all(), [
 
 //
-            'name' => 'required|max:20|unique:courses' ,
+                'name' => 'required|max:20|unique:courses',
 
 
+            ]);
 
-        ]);
-
-        $matkul = new Course();
-        $matkul->name = $request->input('name');
-        $matkul->lecturer_id = $request->input('lecturer_id');
+            $matkul = new Course();
+            $matkul->name = $request->input('name');
+            $matkul->lecturer_id = $request->input('lecturer_id');
 
 
-        $matkul->save();
+            $matkul->save();
 
-        return redirect('/matkul2')->with('alert-success','Data berhasi dihapus!');
+            return redirect('/matkul2')->with('alert-success', 'Data berhasi dihapus!');
 
+        }
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
-                   return view('pages.user.update_matakuliah');
+
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit(Request $request , $id)
     {
-          $req = [
 
-              'name' => $request->name ,
-              'lecture_id' => $request->lecture_id
+        if(!Session::get('login')){
+            return redirect('/login')->with('alert','Kamu harus login dulu');
+        }
+        else
+            {
 
-          ];
+              $matkul = Course::find($id);
+              return view('pages.user.update_matakuliah' , compact('matkul'));
 
-          $data = Course::where('id' , $id)->update($req);
-          return redirect()->route('matkul2.index');
+        }
     }
 
 
 
     public function update(Request $request, $id)
     {
+        if(!Session::get('login')){
+            return redirect('/login')->with('alert','Kamu harus login dulu');
+        }
+        else{
 
+            $masukkan = [
+
+
+                'name'=>$request->name
+
+
+            ];
+
+            $data = Course::where('id' , $id)->update($masukkan);
+            return redirect('matkul2')->with('alert-succes'  , 'Data Berhasil Dirubah');
+
+
+        }
     }
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
 
     public function destroy($id)
     {
-        $data = Course::where('id' , $id)->first();
-        $data->delete();
-        return redirect('matkul2')->with('alert-success','Data berhasi dihapus!');
+        if(!Session::get('login')){
+            return redirect('/login')->with('alert','Kamu harus login dulu');
+        }
+        else {
+            $data = Course::where('id', $id)->first();
+            $data->delete();
+            return redirect('matkul2')->with('alert-success', 'Data berhasi dihapus!');
+        }
     }
 }

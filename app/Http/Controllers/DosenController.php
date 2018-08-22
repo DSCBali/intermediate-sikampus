@@ -99,7 +99,7 @@ class DosenController extends Controller
         else {
             Validator::make(request()->all(), [
 
-                //            'nim' => 'required|min:9|unique:students' ,
+
                 'name' => 'required|max:20|unique:students'
 
             ]);

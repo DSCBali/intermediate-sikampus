@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Session;
 
 use App\Schedule;
 use App\Course;
-use App\kelas;
+use App\Kelas;
 use App\Lecture;
 
 use Validator;
@@ -75,7 +75,7 @@ class JadwalMatkulController extends Controller
         {
             $data = Schedule::find($id);
             $course = Course::get();
-            $kelas = kelas::get();
+            $kelas = Kelas::get();
             return view('pages.user.update_jadwal', compact('data') , ['course' => $course])->with(['kelas' => $kelas]);
         }
     }
