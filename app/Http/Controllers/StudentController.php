@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Session;
 use App\Student;
 use App\kelas;
 
-class UserController extends Controller
+class StudentController extends Controller
 {
     /**
      * Display a listing of the resource.

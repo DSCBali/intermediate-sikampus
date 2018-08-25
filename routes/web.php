@@ -16,7 +16,7 @@ Route::get('/logout', 'LoginController@logout');
 //-----------------------------------------------------------
 
 //UNTUK DATA SISWA PAGE
-Route::resource('user','UserController');
+Route::resource('user','StudentController');
 //-----------------------------------------------------------
 
 
