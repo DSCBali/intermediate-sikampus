@@ -45,7 +45,7 @@
                                             <p>{{$data->gender}}</p>
                                         </td>
                                         <td class="v-align-middle semi-bold">
-                                            <p>{{$data->get_course->name}}</p>
+                                            <p>{{$data->get_course->name_courses}}</p>
                                         </td>
                                         <td class="v-align-middle semi-bold">
 
