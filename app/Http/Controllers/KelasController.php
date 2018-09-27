@@ -70,7 +70,7 @@ class KelasController extends Controller
             ]);
 
             $kelas = new Kelas();
-            $kelas->name = $request->input('name');
+            $kelas->name_kls = $request->input('name');
             $kelas->max_students = $request->input('max_students');
 
 
@@ -115,7 +115,7 @@ class KelasController extends Controller
                 [
 
 
-                    'name'=>$request->name ,
+                    'name'=>$request->name_kls ,
                     'max_students'=>$request->max_students
 
 

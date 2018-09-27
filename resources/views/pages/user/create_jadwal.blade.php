@@ -24,7 +24,7 @@
 
                                   @foreach($dosen as $data)
 
-                                  <option value="{{$data->id}}">{{$data->name}}</option>
+                                  <option value="{{$data->id}}">{{$data->name_lecture}}</option>
 
                                   @endforeach
                               </select>
@@ -36,7 +36,7 @@
 
                                 @foreach($kelas as $data2)
 
-                                <option value="{{$data2->id}}">{{$data2->name}}</option>
+                                <option value="{{$data2->id}}">{{$data2->name_kls}}</option>
 
                                 @endforeach
                             </select>

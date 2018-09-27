@@ -39,7 +39,7 @@
 
                                 @foreach($course as $matkul)
 
-                                <option value="{{$matkul->id}}">{{$matkul->name}}</option>
+                                <option value="{{$matkul->id}}">{{$matkul->name_courses}}</option>
 
                                 @endforeach
                             </select>

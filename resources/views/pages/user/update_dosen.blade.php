@@ -15,7 +15,7 @@
 
                       <div class="form-group">
                           <label>Nama</label>
-                          <input type="text" class="form-control" name="name" required="" value="{{$data -> name }}">
+                          <input type="text" class="form-control" name="name" required="" value="{{$data -> name_lecture }}">
                           </div>
                           <div class="form-group">
                               <label>Jenis Kelamin</label>
@@ -46,7 +46,7 @@
                                 <select class="form-control" name="matkul">
                                         <option value="{{$data->course_id}}">{{$data->get_course->name}}</option>
                                     @foreach($matakuliah as $matkul)
-                                          <option value="{{$matkul->id}}">{{$matkul->name}}</option>
+                                          <option value="{{$matkul->id}}">{{$matkul->name_courses}}</option>
                                         @endforeach
 
                                 </select>

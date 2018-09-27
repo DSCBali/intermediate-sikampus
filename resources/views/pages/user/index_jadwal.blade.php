@@ -36,11 +36,11 @@
                                             <p>{{$data->time}}</p>
                                         </td>
                                         <td class="v-align-middle semi-bold">
-                                            <p>{{$data->get_course->name}}</p>
+                                            <p>{{$data->get_course->name_courses}}</p>
                                         </td>
 
                                         <td class="v-align-middle semi-bold">
-                                            <p>{{$data->get_class->name}}</p>
+                                            <p>{{$data->get_class->name_kls}}</p>
                                         </td>
                                         <td class="v-align-middle semi-bold">
 

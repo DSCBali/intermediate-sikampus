@@ -12,7 +12,7 @@
                         @method('PUT')
                       <div class="form-group">
                           <label>Nama Kelas</label>
-                          <input type="text" class="form-control" name="name" value="{{$kelas->name}}" required="">
+                          <input type="text" class="form-control" name="name" value="{{$kelas->name_kls}}" required="">
                           </div>
                           <label>Maksimal Mahasiswa</label>
                           <input type="text" class="form-control" name="max_students" value="{{$kelas->max_students}}" required="">

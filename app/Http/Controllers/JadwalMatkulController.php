@@ -52,7 +52,7 @@ class JadwalMatkulController extends Controller
         }
         else
             {
-
+//
         $jadwal = new Schedule();
         $jadwal->day = $request->input('day');
         $jadwal->time = $request->input('time');

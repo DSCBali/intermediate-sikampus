@@ -29,7 +29,7 @@
                                             <p>{{$no++}}</p>
                                         </td>
                                         <td class="v-align-middle semi-bold">
-                                            <p>{{$data->name}}</p>
+                                            <p>{{$data->name_lecture}}</p>
                                         </td>
                                         <td class="v-align-middle semi-bold">
                                             <p>{{$data->dob}}</p>

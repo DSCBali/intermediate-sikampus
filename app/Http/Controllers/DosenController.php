@@ -58,7 +58,7 @@ class DosenController extends Controller
             ]);
 
             $dosens = new Lecture();
-            $dosens->name = $request->input('name');
+            $dosens->name_lecture = $request->input('name');
             $dosens->gender = $request->input('gender');
             $dosens->dob = $request->input('dob');
             $dosens->phone = $request->input('phone');
@@ -107,7 +107,7 @@ class DosenController extends Controller
 
             $req = [
 
-                'name' => $request->name,
+                'name' => $request->name_lecture,
                 'gender' => $request->gender,
                 'dob' => $request->dob,
                 'phone' => $request->phone,

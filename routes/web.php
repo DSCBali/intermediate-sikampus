@@ -19,6 +19,11 @@ Route::get('/logout', 'LoginController@logout');
 Route::resource('user','StudentController');
 //-----------------------------------------------------------
 
+//UNTUK CEK JADWAL
+Route::resource('/jadwalcek' , 'CekJadwalSiswa');
+Route::post('/cekjadwal' , 'CekJadwalSiswa@show');
+//-----------------------------------------------------------
+
 
 
 //PAGE DOSEN

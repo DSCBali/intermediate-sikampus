@@ -22,18 +22,18 @@
                         <div class="form-group">
                             <label> Pilih Mata Kuliah</label>
                             <select class="form-control" name="matkul">
-                                <option value="{{$data->course_id}}">{{$data->get_course->name}}</option>
+                                <option value="{{$data->course_id}}">{{$data->get_course->name_courses}}</option>
                                 @foreach($course as $data2)
-                                    <option value="{{$data2->id}}">{{$data2->name}}</option>
+                                    <option value="{{$data2->id}}">{{$data2->name_courses}}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="form-group">
                             <label> Pilih Kelas</label>
                             <select class="form-control" name="kelas">
-                                <option value="{{$data->class_id}}">{{$data->get_class->name}}</option>
+                                <option value="{{$data->class_id}}">{{$data->get_class->name_kls}}</option>
                                 @foreach($kelas as $data3)
-                                        <option value="{{$data3->id}}">{{$data3->name}}</option>
+                                        <option value="{{$data3->id}}">{{$data3->name_kls}}</option>
                                 @endforeach
                             </select>
                         </div>

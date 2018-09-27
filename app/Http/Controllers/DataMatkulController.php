@@ -85,7 +85,7 @@ class DataMatkulController extends Controller
             ]);
 
             $matkul = new Course();
-            $matkul->name = $request->input('name');
+            $matkul->name_courses = $request->input('name');
             $matkul->lecturer_id = $request->input('lecturer_id');
 
 
@@ -131,7 +131,7 @@ class DataMatkulController extends Controller
             $masukkan = [
 
 
-                'name'=>$request->name
+                'name'=>$request->name_courses
 
 
             ];

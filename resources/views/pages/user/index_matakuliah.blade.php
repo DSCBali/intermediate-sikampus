@@ -30,7 +30,7 @@
                                           <p>{{$no++}}</p>
                                       </td>
                                         <td class="v-align-middle semi-bold">
-                                            <p>{{$data->name}}</p>
+                                            <p>{{$data->name_courses}}</p>
 
                                         {{--<td class="v-align-middle semi-bold">--}}
                                             {{--<p>{{$data->get_lectures->name}}</p>--}}

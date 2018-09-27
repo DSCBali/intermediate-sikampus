@@ -33,7 +33,7 @@
                                           <p>{{$no++}}</p>
                                       </td>
                                         <td class="v-align-middle semi-bold">
-                                            <p>{{$data->name}}</p>
+                                            <p>{{$data->name_kls}}</p>
                                         </td>
                                         <td class="v-align-middle semi-bold">
                                             <p>{{$data->max_students}}</p>

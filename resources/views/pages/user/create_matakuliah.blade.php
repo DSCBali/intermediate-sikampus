@@ -20,7 +20,7 @@
 
                                   @foreach($dosen as $pengajar)
 
-                                  <option value="{{$pengajar->id}}">{{$pengajar->name}}</option>
+                                  <option value="{{$pengajar->id}}">{{$pengajar->name_lecture}}</option>
 
                                   @endforeach
                               </select>

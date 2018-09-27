@@ -12,7 +12,7 @@
                         @method('PUT')
                       <div class="form-group">
                           <label>Nama Kelas</label>
-                          <input type="text" class="form-control" name="name" value="{{$matkul->name}}" required="">
+                          <input type="text" class="form-control" name="name" value="{{$matkul->name_courses}}" required="">
                           </div>
                             <button class="btn btn-success btn-con">Simpan</button>
                             <button class="btn btn-default btn-con">Batal</button>
