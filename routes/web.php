@@ -1,22 +1,44 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+// PAGE ROUTE
+Route::get('/',function(){return view('pages.dashboard');});
+Route::get('mahasiswa',function(){return view('pages.college');});
+// INI UNTUK HALAMAN LOGIN ADMIN
+Route::get('/loginadmin',function(){return view('pages.user.admin');});
 
-Route::get('/', function () {
-    return view('pages.dashboard');
-});
+//AUTH LOGIN ADMIN
+Route::get('/home_user', 'LoginController@index');
+Route::get('/login', 'LoginController@login');
+Route::post('/loginPost', 'LoginController@loginPost');
+// Route::get('/register', 'LoginController@register');
+// Route::post('/registerPost', 'LoginController@registerPost');
+Route::get('/logout', 'LoginController@logout');
+//-----------------------------------------------------------
 
-Route::resource('user','UserController');
-Route::resource('mahasiswa',function(){
-    return view('pages.college');
-});
+//UNTUK DATA SISWA PAGE
+Route::resource('user','StudentController');
+//-----------------------------------------------------------
 
+//UNTUK CEK JADWAL
+Route::resource('/jadwalcek' , 'CekJadwalSiswa');
+Route::post('/cekjadwal' , 'CekJadwalSiswa@show');
+//-----------------------------------------------------------
+
+
+
+//PAGE DOSEN
+Route::resource('user2' , 'DosenController');
+//-----------------------------------------------------------
+
+//PAGE jadwal
+Route::resource('jadwalmatkul' , 'JadwalMatkulController');
+//-----------------------------------------------------------
+
+//Page Kelas
+Route::resource('kelas' , 'KelasController');
+//-----------------------------------------------------------
+
+
+//Page Mata Kuliah
+Route::resource('matkul2' , 'DataMatkulController');
+//-----------------------------------------------------------

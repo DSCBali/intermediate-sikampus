@@ -36,21 +36,52 @@
         <div class="sidebar-menu">
 
             <ul class="menu-items">
+                {{--<li class="m-t-30">--}}
+                    {{--<a href="/" class="detailed">--}}
+                        {{--<span class="title">Dashboard</span>--}}
+
+                    {{--</a>--}}
+                    {{--<span class="bg-success icon-thumbnail"><i class="pg-arrow_right"></i></span>--}}
+                {{--</li>--}}
+
+
                 <li class="m-t-30 ">
-                    <a href="/" class="detailed">
-                        <span class="title">Cek Jadwal</span>
+                    <a href="/user" class="detailed">
+                        <span class="title">Data Mahasiswa</span>
 
                     </a>
-                    <span class="bg-success icon-thumbnail"><i class="pg-home"></i></span>
+                    <span class="bg-success icon-thumbnail"><i class="pg-arrow_right"></i></span>
                 </li>
-
                 <li class="m-t-30 ">
-                    <a href="/loginadmin" class="detailed">
-                        <span class="title">Login Staff</span>
+                    <a href="/user2" class="detailed">
+                        <span class="title">Data Dosen</span>
 
                     </a>
-                    <span class="bg-success icon-thumbnail"><i class="pg-home"></i></span>
+                    <span class="bg-success icon-thumbnail"><i class="pg-arrow_right"></i></span>
                 </li>
+                <li class="m-t-30 ">
+                    <a href="/jadwalmatkul" class="detailed">
+                        <span class="title">Jadwal</span>
+
+                    </a>
+                    <span class="bg-success icon-thumbnail"><i class="pg-arrow_right"></i></span>
+                </li>
+                <li class="m-t-30 ">
+                    <a href="/kelas" class="detailed">
+                        <span class="title">Kelas</span>
+
+                    </a>
+                    <span class="bg-success icon-thumbnail"><i class="pg-arrow_right"></i></span>
+                </li>
+                <li class="m-t-30 ">
+                    <a href="/matkul2" class="detailed">
+                        <span class="title">Mata Kuliah</span>
+
+                    </a>
+                    <span class="bg-success icon-thumbnail"><i class="pg-arrow_right"></i></span>
+                </li>
+
+
 
 
             </ul>

@@ -32,7 +32,7 @@
 
 <body class="fixed-header dashboard menu-pin menu-behind">
 
-    @include('component.layouts.sidebar')
+    @include('component.layouts_admin.sidebar')
     <div class="page-container ">
 
             <div class="header ">
@@ -47,7 +47,26 @@
                     </div>
 
                     </div>
-              
+                <div class="d-flex align-items-center">
+
+
+                    <div class="pull-left p-r-10 fs-14 font-heading d-lg-block d-none">
+
+                    </div>
+                    <div class="dropdown pull-right d-lg-block d-none">
+
+                        <div>
+                            {{--<a href="#" class="dropdown-item"><i class="pg-settings_small"></i> Settings</a>--}}
+                            {{--<a href="#" class="dropdown-item"><i class="pg-outdent"></i> Feedback</a>--}}
+                            {{--<a href="#" class="dropdown-item"><i class="pg-signals"></i> Help</a>--}}
+                            <a href="/logout" class="clearfix bg-master-lighter dropdown-item">
+                                <span class="pull-left">Logout</span>
+                                {{--<span class="pull-right">asdasdasd<i class="pg-power">asdasasdasdad</i></span>--}}
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
             </div>
 
             <div class="page-content-wrapper ">

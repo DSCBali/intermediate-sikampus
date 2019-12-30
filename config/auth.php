@@ -36,6 +36,24 @@ return [
     */
 
     'guards' => [
+
+
+        //INI MENGATUR LOGIN STAFF
+        'staff' => [
+
+            'driver' => 'session' ,
+            'provider' => 'staff' ,
+
+        ],
+
+        'apistaff' => [
+
+            'driver' => 'token' ,
+            'provider' => 'staff',
+
+        ],
+        //------------------------
+
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
@@ -68,6 +86,13 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
+        ],
+
+        'staff' => [
+
+            'driver' => 'eloquent' ,
+            'model' => App\Staff::class,
+
         ],
 
         // 'users' => [

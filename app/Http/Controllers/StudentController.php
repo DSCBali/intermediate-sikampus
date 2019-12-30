@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use App\Student;
+use App\kelas;
 
-class UserController extends Controller
+class StudentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +16,23 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
-        return view('pages.user.index');
+
+      if(!Session::get('login')){
+          return redirect('/login')->with('alert','Kamu harus login dulu');
+      }
+      else{
+
+        $student = new Student;
+        $students = $student->all();
+        return view('pages.user.index')->with('students',$students);
+
+      }
+
+    }
+
+    public function pindah()
+    {
+        return view('pages.user.edit');
     }
 
     /**
@@ -24,9 +42,10 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
-        return view('pages.user.create');
-        
+        $class = kelas::get();
+        return view ('pages.user.create' , ['class'=>$class]);
+//        return view ('pages.user.index' , ['class'=>$class]);
+
     }
 
     /**
@@ -48,7 +67,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+
+
+
     }
 
     /**
@@ -71,7 +92,15 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+//        $students = Student::where('id',$id)->first();
+//        $students->nim = $request->nim;
+//        $students->name = $request->name;
+//        $students->dob = $request->dob;
+//        $students->address = $request->address;
+//        $students->gender = $request->input('gender');
+//        $students->class_id = $request->input('kelas');
+//        $students->save();
+//        return redirect('/user')->with('alert-success','Data berhasil diubah!');
     }
 
     /**
